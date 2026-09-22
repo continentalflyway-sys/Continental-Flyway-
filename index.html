@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Continental Flyway Tour & Travel</title>
+
+<meta name="description" content="Continental Flyway Tour & Travel - Air Ticketing, Visa Assistance, Tour Packages, Hotel Booking and Travel Services.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    color:#1f2937;
+    background:#f5f9ff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+}
+
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* HEADER */
+header{
+    background:#063b72;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
+
+.navbar{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo{
+    font-size:21px;
+    font-weight:bold;
+    color:white;
+}
+
+.logo span{
+    color:#fbbf24;
+}
+
+nav{
+    display:flex;
+    gap:24px;
+}
+
+nav a{
+    color:white;
+    font-weight:600;
+    font-size:15px;
+}
+
+nav a:hover{
+    color:#fbbf24;
+}
+
+/* HERO */
+.hero{
+    min-height:620px;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    color:white;
+    background:
+        linear-gradient(rgba(3,43,82,.78),rgba(3,43,82,.78)),
+        linear-gradient(135deg,#0b67b2,#063b72);
+}
+
+.hero-content{
+    max-width:850px;
+    margin:auto;
+    padding:70px 0;
+}
+
+.hero h1{
+    font-size:48px;
+    line-height:1.15;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#fbbf24;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 25px;
+    border-radius:7px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#fbbf24;
+    color:#102a43;
+}
+
+.btn-primary:hover{
+    background:#f59e0b;
+    transform:translateY(-2px);
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#063b72;
+}
+
+/* SECTION */
+section{
+    padding:75px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    color:#063b72;
+    font-size:34px;
+    margin-bottom:10px;
+}
+
+.section-title p{
+    color:#64748b;
+}
+
+/* SERVICES */
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+.card{
+    background:white;
+    padding:30px 24px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    color:#063b72;
+    margin-bottom:10px;
+    font-size:21px;
+}
+
+.card p{
+    color:#64748b;
+}
+
+/* ABOUT */
+.about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
+}
+
+.about h2{
+    color:#063b72;
+    font-size:34px;
+    margin-bottom:18px;
+}
+
+.about p{
+    color:#4b5563;
+    margin-bottom:15px;
+}
+
+.check-list{
+    list-style:none;
+    margin-top:20px;
+}
+
+.check-list li{
+    margin:12px 0;
+    font-weight:600;
+}
+
+.check-list li::before{
+    content:"✓";
+    color:#16a34a;
+    font-weight:bold;
+    margin-right:10px;
+}
+
+/* DESTINATIONS */
+.destinations{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.destination{
+    min-height:180px;
+    border-radius:12px;
+    padding:25px;
+    display:flex;
+    align-items:flex-end;
+    color:white;
+    font-size:21px;
+    font-weight:bold;
+    background:linear-gradient(135deg,#0b67b2,#063b72);
+    box-shadow:0 5px 18px rgba(0,0,0,.1);
+}
+
+/* CONTACT */
+.contact{
+    background:#063b72;
+    color:white;
+}
+
+.contact .section-title h2{
+    color:white;
+}
+
+.contact .section-title p{
+    color:#dbeafe;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.contact-box{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    padding:25px;
+    border-radius:10px;
+    text-align:center;
+}
+
+.contact-box h3{
+    margin-bottom:10px;
+    color:#fbbf24;
+}
+
+.contact-box a{
+    color:white;
+}
+
+/* FOOTER */
+footer{
+    background:#02284e;
+    color:#cbd5e1;
+    text-align:center;
+    padding:25px 0;
+}
+
+footer strong{
+    color:white;
+}
+
+/* WHATSAPP */
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:29px;
+    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    z-index:2000;
+}
+
+.whatsapp:hover{
+    transform:scale(1.08);
+}
+
+/* MOBILE */
+@media(max-width:850px){
+
+    .navbar{
+        flex-direction:column;
+        padding:16px 0;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:12px 18px;
+    }
+
+    .hero{
+        min-height:540px;
+    }
+
+    .hero h1{
+        font-size:36px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    .services{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .destinations{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:550px){
+
+    .container{
+        width:90%;
+    }
+
+    section{
+        padding:55px 0;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .destinations{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:29px;
+    }
+
+    .logo{
+        font-size:18px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="container navbar">
+
+        <a href="#home" class="logo">
+            Continental <span>Flyway</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#destinations">Destinations</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <h1>
+            Your Journey Starts With
+            <span>Continental Flyway</span>
+        </h1>
+
+        <p>
+            Air Ticketing • Visa Assistance • Tour Packages •
+            Hotel Booking • Travel Services
+        </p>
+
+        <div class="buttons">
+
+            <a href="#services" class="btn btn-primary">
+                Explore Services
+            </a>
+
+            <a href="#contact" class="btn btn-outline">
+                Contact Us
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+<section id="services">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Our Services</h2>
+            <p>Complete travel solutions for your next journey</p>
+        </div>
+
+        <div class="services">
+
+            <div class="card">
+                <div class="icon">✈️</div>
+                <h3>Air Ticketing</h3>
+                <p>
+                    Domestic and international flight
+                    ticketing assistance.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌍</div>
+                <h3>Visa Assistance</h3>
+                <p>
+                    Guidance and assistance for your
+                    travel visa application.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🏨</div>
+                <h3>Hotel Booking</h3>
+                <p>
+                    Find suitable accommodation for
+                    business and leisure travel.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🧳</div>
+                <h3>Tour Packages</h3>
+                <p>
+                    Customized tour packages for
+                    memorable holidays.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🚕</div>
+                <h3>Travel Services</h3>
+                <p>
+                    Convenient travel and transportation
+                    support for your journey.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🌐</div>
+                <h3>Travel Consultation</h3>
+                <p>
+                    Professional guidance to help
+                    plan your international trip.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="container about-grid">
+
+        <div>
+            <h2>About Continental Flyway</h2>
+
+            <p>
+                Continental Flyway Tour & Travel provides
+                travel-related services designed to make
+                your journey easier and more convenient.
+            </p>
+
+            <p>
+                From flight tickets and visa assistance to
+                hotel reservations and tour planning, we
+                help travelers organize their trips with
+                practical support.
+            </p>
+
+            <ul class="check-list">
+                <li>Professional Travel Assistance</li>
+                <li>Air Ticketing Support</li>
+                <li>Visa Application Guidance</li>
+                <li>Tour & Hotel Booking</li>
+                <li>Customer-focused Service</li>
+            </ul>
+        </div>
+
+        <div class="card">
+
+            <div class="icon">🌎</div>
+
+            <h3>Your Travel, Our Support</h3>
+
+            <p>
+                Whether you are planning a holiday,
+                business trip, family vacation or
+                international journey, Continental Flyway
+                is ready to assist you.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- DESTINATIONS -->
+<section id="destinations">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Popular Destinations</h2>
+            <p>Explore your next destination</p>
+        </div>
+
+        <div class="destinations">
+
+            <div class="destination">
+                🇪🇺 Europe
+            </div>
+
+            <div class="destination">
+                🇦🇪 Dubai
+            </div>
+
+            <div class="destination">
+                🇹🇭 Thailand
+            </div>
+
+            <div class="destination">
+                🇲🇾 Malaysia
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Contact Us</h2>
+            <p>Get in touch with Continental Flyway</p>
+        </div>
+
+        <div class="contact-grid">
+
+            <div class="contact-box">
+
+                <h3>📞 Phone</h3>
+
+                <p>
+                    <a href="tel:+8801998888321">
+                        +8801998888321
+                    </a>
+                </p>
+
+                <p>
+                    <a href="tel:+8801677055600">
+                        +8801677055600
+                    </a>
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>💬 WhatsApp</h3>
+
+                <p>
+                    <a href="https://wa.me/8801922422644"
+                       target="_blank">
+                        01922422644
+                    </a>
+                </p>
+
+                <p>
+                    Chat with us on WhatsApp
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <h3>✉️ Email</h3>
+
+                <p>
+                    <a href="mailto:continentalflyway@gmail.com">
+                        continentalflyway@gmail.com
+                    </a>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="container">
+
+        <p>
+            © 2026 <strong>Continental Flyway Tour & Travel</strong>.
+            All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- WHATSAPP BUTTON -->
+<a
+    class="whatsapp"
+    href="https://wa.me/8801922422644"
+    target="_blank"
+    aria-label="Chat on WhatsApp"
+>
+    ☎
+</a>
+
+</body>
+</html>
