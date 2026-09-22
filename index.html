@@ -4,240 +4,305 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Continental Flyway Tour & Travel</title>
+<title>Continental Flyway | Tours, Travel, Flights & Visa</title>
 
-<meta name="description" content="Continental Flyway Tour & Travel - Air Ticketing, Visa Assistance, Tour Packages, Hotel Booking and Travel Services.">
+<meta name="description"
+content="Continental Flyway - Flight tickets, holiday packages, visa assistance, hotel booking and customized tours.">
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    color:#1f2937;
-    background:#f5f9ff;
+    background:#f6f8fb;
+    color:#172033;
     line-height:1.6;
 }
 
 a{
     text-decoration:none;
+    color:inherit;
 }
 
 .container{
     width:92%;
-    max-width:1150px;
+    max-width:1200px;
     margin:auto;
 }
 
-/* HEADER */
-header{
-    background:#063b72;
+/* TOP BAR */
+.topbar{
+    background:#071b3a;
     color:white;
+    padding:8px 0;
+    font-size:14px;
+}
+
+.topbar-content{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+}
+
+.topbar a{
+    color:white;
+}
+
+/* NAVBAR */
+.navbar{
+    background:white;
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
 }
 
-.navbar{
-    min-height:72px;
+.nav-content{
+    min-height:76px;
     display:flex;
-    align-items:center;
     justify-content:space-between;
-    gap:20px;
+    align-items:center;
+    gap:25px;
 }
 
 .logo{
-    font-size:21px;
-    font-weight:bold;
-    color:white;
-}
-
-.logo span{
-    color:#fbbf24;
-}
-
-nav{
     display:flex;
-    gap:24px;
+    align-items:center;
+    gap:10px;
 }
 
-nav a{
+.logo-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#0b63ce,#12a5e5);
     color:white;
-    font-weight:600;
-    font-size:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:23px;
 }
 
-nav a:hover{
-    color:#fbbf24;
+.logo-text{
+    font-size:21px;
+    font-weight:800;
+    color:#071b3a;
+}
+
+.logo-text span{
+    display:block;
+    font-size:11px;
+    letter-spacing:2px;
+    color:#0b73d1;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:25px;
+    list-style:none;
+    font-weight:600;
+}
+
+.nav-links a:hover{
+    color:#0875d1;
+}
+
+.nav-btn{
+    background:#0875d1;
+    color:white!important;
+    padding:11px 18px;
+    border-radius:8px;
 }
 
 /* HERO */
 .hero{
-    min-height:620px;
+    min-height:540px;
+    background:
+    linear-gradient(rgba(3,20,48,.72),rgba(3,20,48,.55)),
+    url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80")
+    center/cover;
     display:flex;
     align-items:center;
-    text-align:center;
-    color:white;
-    background:
-        linear-gradient(rgba(3,43,82,.78),rgba(3,43,82,.78)),
-        linear-gradient(135deg,#0b67b2,#063b72);
 }
 
 .hero-content{
-    max-width:850px;
-    margin:auto;
-    padding:70px 0;
+    color:white;
+    max-width:720px;
+    padding:65px 0 100px;
 }
 
-.hero h1{
-    font-size:48px;
-    line-height:1.15;
+.hero-content h1{
+    font-size:52px;
+    line-height:1.1;
     margin-bottom:20px;
 }
 
-.hero h1 span{
-    color:#fbbf24;
+.hero-content h1 span{
+    color:#4fc3ff;
 }
 
-.hero p{
-    font-size:20px;
+.hero-content p{
+    font-size:19px;
+    max-width:650px;
     margin-bottom:30px;
 }
 
-.buttons{
+.hero-buttons{
     display:flex;
-    justify-content:center;
+    gap:15px;
     flex-wrap:wrap;
-    gap:14px;
 }
 
 .btn{
     display:inline-block;
-    padding:13px 25px;
-    border-radius:7px;
+    padding:14px 24px;
+    border-radius:8px;
     font-weight:bold;
-    transition:.3s;
+    border:0;
+    cursor:pointer;
+    font-size:15px;
 }
 
 .btn-primary{
-    background:#fbbf24;
-    color:#102a43;
-}
-
-.btn-primary:hover{
-    background:#f59e0b;
-    transform:translateY(-2px);
-}
-
-.btn-outline{
-    border:2px solid white;
+    background:#0875d1;
     color:white;
 }
 
-.btn-outline:hover{
+.btn-secondary{
     background:white;
-    color:#063b72;
+    color:#071b3a;
 }
 
-/* SECTION */
+/* SEARCH BOX */
+.search-wrap{
+    margin-top:-75px;
+    position:relative;
+    z-index:5;
+}
+
+.search-box{
+    background:white;
+    border-radius:15px;
+    padding:22px;
+    box-shadow:0 12px 40px rgba(0,0,0,.14);
+}
+
+.search-tabs{
+    display:flex;
+    gap:8px;
+    border-bottom:1px solid #e5e8ed;
+    margin-bottom:20px;
+    overflow-x:auto;
+}
+
+.search-tab{
+    padding:12px 20px;
+    border:0;
+    background:none;
+    cursor:pointer;
+    font-weight:bold;
+    white-space:nowrap;
+    color:#526070;
+}
+
+.search-tab.active{
+    color:#0875d1;
+    border-bottom:3px solid #0875d1;
+}
+
+.search-form{
+    display:grid;
+    grid-template-columns:repeat(4,1fr) auto;
+    gap:12px;
+}
+
+.input-group label{
+    display:block;
+    font-size:12px;
+    color:#687588;
+    margin-bottom:5px;
+}
+
+.input-group input,
+.input-group select{
+    width:100%;
+    padding:13px;
+    border:1px solid #d9dfe7;
+    border-radius:8px;
+    outline:none;
+    background:white;
+}
+
+/* SECTIONS */
 section{
     padding:75px 0;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:45px;
+    margin-bottom:40px;
 }
 
 .section-title h2{
-    color:#063b72;
     font-size:34px;
-    margin-bottom:10px;
+    color:#071b3a;
+    margin-bottom:8px;
 }
 
 .section-title p{
-    color:#64748b;
+    color:#687588;
 }
 
 /* SERVICES */
 .services{
     display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:24px;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-.card{
+.service-card{
     background:white;
-    padding:30px 24px;
-    border-radius:12px;
+    padding:28px 22px;
+    border-radius:13px;
     text-align:center;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
     transition:.3s;
 }
 
-.card:hover{
+.service-card:hover{
     transform:translateY(-6px);
-    box-shadow:0 10px 30px rgba(0,0,0,.12);
+    box-shadow:0 12px 30px rgba(0,0,0,.1);
 }
 
-.icon{
-    font-size:45px;
-    margin-bottom:15px;
-}
-
-.card h3{
-    color:#063b72;
-    margin-bottom:10px;
-    font-size:21px;
-}
-
-.card p{
-    color:#64748b;
-}
-
-/* ABOUT */
-.about{
-    background:white;
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:45px;
+.service-icon{
+    width:65px;
+    height:65px;
+    border-radius:50%;
+    background:#e9f5ff;
+    display:flex;
     align-items:center;
+    justify-content:center;
+    margin:0 auto 17px;
+    font-size:29px;
 }
 
-.about h2{
-    color:#063b72;
-    font-size:34px;
-    margin-bottom:18px;
+.service-card h3{
+    margin-bottom:8px;
 }
 
-.about p{
-    color:#4b5563;
-    margin-bottom:15px;
-}
-
-.check-list{
-    list-style:none;
-    margin-top:20px;
-}
-
-.check-list li{
-    margin:12px 0;
-    font-weight:600;
-}
-
-.check-list li::before{
-    content:"✓";
-    color:#16a34a;
-    font-weight:bold;
-    margin-right:10px;
+.service-card p{
+    font-size:14px;
+    color:#687588;
 }
 
 /* DESTINATIONS */
@@ -248,65 +313,259 @@ section{
 }
 
 .destination{
-    min-height:180px;
-    border-radius:12px;
-    padding:25px;
-    display:flex;
-    align-items:flex-end;
+    height:300px;
+    border-radius:15px;
+    overflow:hidden;
+    position:relative;
     color:white;
-    font-size:21px;
-    font-weight:bold;
-    background:linear-gradient(135deg,#0b67b2,#063b72);
-    box-shadow:0 5px 18px rgba(0,0,0,.1);
+    background-size:cover;
+    background-position:center;
 }
 
-/* CONTACT */
-.contact{
-    background:#063b72;
+.destination:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(transparent,rgba(0,0,0,.8));
+}
+
+.destination-content{
+    position:absolute;
+    z-index:2;
+    bottom:20px;
+    left:20px;
+}
+
+.destination h3{
+    font-size:24px;
+}
+
+/* OFFERS */
+.offers{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.offer-card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 6px 22px rgba(0,0,0,.07);
+}
+
+.offer-img{
+    height:190px;
+    background-size:cover;
+    background-position:center;
+}
+
+.offer-body{
+    padding:22px;
+}
+
+.offer-body h3{
+    margin-bottom:8px;
+}
+
+.offer-body p{
+    color:#687588;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+/* WHY US */
+.why{
+    background:#071b3a;
     color:white;
 }
 
-.contact .section-title h2{
-    color:white;
+.why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:45px;
+    align-items:center;
 }
 
-.contact .section-title p{
-    color:#dbeafe;
+.why h2{
+    font-size:38px;
+    margin-bottom:15px;
 }
 
-.contact-grid{
+.why p{
+    color:#d2d9e5;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:25px;
+}
+
+.feature{
+    padding:18px;
+    background:rgba(255,255,255,.08);
+    border-radius:10px;
+}
+
+.feature strong{
+    display:block;
+    margin-bottom:4px;
+}
+
+/* ABOUT */
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-img{
+    min-height:380px;
+    border-radius:18px;
+    background:
+    url("https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80")
+    center/cover;
+}
+
+.about-content h2{
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.about-content p{
+    color:#657286;
+    margin-bottom:15px;
+}
+
+/* REVIEWS */
+.reviews{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:20px;
 }
 
-.contact-box{
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);
+.review{
+    background:white;
     padding:25px;
-    border-radius:10px;
-    text-align:center;
+    border-radius:13px;
+    box-shadow:0 5px 20px rgba(0,0,0,.06);
 }
 
-.contact-box h3{
+.stars{
+    color:#f4b400;
     margin-bottom:10px;
-    color:#fbbf24;
 }
 
-.contact-box a{
+.review p{
+    color:#667386;
+    margin-bottom:15px;
+}
+
+/* FAQ */
+.faq{
+    max-width:850px;
+    margin:auto;
+}
+
+details{
+    background:white;
+    margin-bottom:12px;
+    padding:18px 20px;
+    border-radius:10px;
+    box-shadow:0 3px 12px rgba(0,0,0,.05);
+}
+
+summary{
+    font-weight:bold;
+    cursor:pointer;
+}
+
+/* CONTACT */
+.contact{
+    background:#eef6ff;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.contact-info{
+    background:#071b3a;
     color:white;
+    padding:35px;
+    border-radius:15px;
+}
+
+.contact-info h2{
+    margin-bottom:20px;
+}
+
+.contact-item{
+    margin:18px 0;
+}
+
+.contact-item strong{
+    display:block;
+    color:#58c4ff;
+}
+
+.contact-form{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea{
+    width:100%;
+    padding:13px;
+    margin-bottom:14px;
+    border:1px solid #d9dfe7;
+    border-radius:8px;
+    outline:none;
+}
+
+.contact-form textarea{
+    height:130px;
+    resize:vertical;
 }
 
 /* FOOTER */
 footer{
-    background:#02284e;
-    color:#cbd5e1;
-    text-align:center;
-    padding:25px 0;
+    background:#041127;
+    color:#cbd4e1;
+    padding:50px 0 20px;
 }
 
-footer strong{
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:30px;
+    margin-bottom:35px;
+}
+
+footer h3{
     color:white;
+    margin-bottom:15px;
+}
+
+footer a{
+    display:block;
+    margin:8px 0;
+    color:#cbd4e1;
+}
+
+.footer-bottom{
+    border-top:1px solid rgba(255,255,255,.12);
+    padding-top:20px;
+    text-align:center;
+    font-size:13px;
 }
 
 /* WHATSAPP */
@@ -317,95 +576,124 @@ footer strong{
     width:58px;
     height:58px;
     border-radius:50%;
-    background:#25d366;
+    background:#25D366;
     color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:29px;
-    box-shadow:0 5px 15px rgba(0,0,0,.25);
+    font-size:27px;
     z-index:2000;
-}
-
-.whatsapp:hover{
-    transform:scale(1.08);
+    box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
 /* MOBILE */
-@media(max-width:850px){
+.mobile-menu{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
 
-    .navbar{
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:76px;
+        left:0;
+        right:0;
+        background:white;
         flex-direction:column;
-        padding:16px 0;
+        padding:20px;
+        box-shadow:0 8px 20px rgba(0,0,0,.1);
     }
 
-    nav{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:12px 18px;
+    .nav-links.show{
+        display:flex;
     }
 
-    .hero{
-        min-height:540px;
+    .mobile-menu{
+        display:block;
     }
 
-    .hero h1{
-        font-size:36px;
+    .hero-content h1{
+        font-size:40px;
     }
 
-    .hero p{
-        font-size:17px;
-    }
-
-    .services{
+    .search-form{
         grid-template-columns:1fr 1fr;
     }
 
-    .about-grid{
-        grid-template-columns:1fr;
-    }
-
+    .services,
     .destinations{
         grid-template-columns:1fr 1fr;
     }
 
+    .offers,
+    .reviews{
+        grid-template-columns:1fr;
+    }
+
+    .why-grid,
+    .about-grid,
     .contact-grid{
         grid-template-columns:1fr;
     }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
 }
 
-@media(max-width:550px){
+@media(max-width:600px){
 
-    .container{
-        width:90%;
+    .topbar-content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .hero{
+        min-height:570px;
+    }
+
+    .hero-content{
+        padding-top:40px;
+    }
+
+    .hero-content h1{
+        font-size:34px;
+    }
+
+    .hero-content p{
+        font-size:16px;
+    }
+
+    .search-wrap{
+        margin-top:-45px;
+    }
+
+    .search-form{
+        grid-template-columns:1fr;
+    }
+
+    .services,
+    .destinations{
+        grid-template-columns:1fr;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
     }
 
     section{
         padding:55px 0;
     }
 
-    .hero h1{
-        font-size:31px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .services{
-        grid-template-columns:1fr;
-    }
-
-    .destinations{
-        grid-template-columns:1fr;
-    }
-
     .section-title h2{
-        font-size:29px;
-    }
-
-    .logo{
-        font-size:18px;
+        font-size:28px;
     }
 }
 </style>
@@ -413,50 +701,77 @@ footer strong{
 
 <body>
 
-<!-- HEADER -->
-<header>
-    <div class="container navbar">
+<!-- TOP BAR -->
+<div class="topbar">
+    <div class="container topbar-content">
+        <div>✈️ Your Journey, Our Responsibility</div>
+
+        <div>
+            📞
+            <a href="tel:+8801998888321">+8801998888321</a>
+            &nbsp; | &nbsp;
+            📧
+            <a href="mailto:continentalflyway@gmail.com">
+                continentalflyway@gmail.com
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="container nav-content">
 
         <a href="#home" class="logo">
-            Continental <span>Flyway</span>
+            <div class="logo-icon">✈</div>
+
+            <div class="logo-text">
+                Continental Flyway
+                <span>TOUR & TRAVEL</span>
+            </div>
         </a>
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#destinations">Destinations</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="mobile-menu" onclick="toggleMenu()">☰</div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#destinations">Destinations</a></li>
+            <li><a href="#offers">Offers</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact" class="nav-btn">Contact Us</a></li>
+        </ul>
 
     </div>
 </header>
 
-
 <!-- HERO -->
 <section class="hero" id="home">
 
-    <div class="container hero-content">
+    <div class="container">
 
-        <h1>
-            Your Journey Starts With
-            <span>Continental Flyway</span>
-        </h1>
+        <div class="hero-content">
 
-        <p>
-            Air Ticketing • Visa Assistance • Tour Packages •
-            Hotel Booking • Travel Services
-        </p>
+            <h1>
+                Explore The World
+                <span>With Us</span>
+            </h1>
 
-        <div class="buttons">
+            <p>
+                Discover flights, unforgettable holidays, hotels and
+                visa assistance with Continental Flyway.
+                Your journey starts here.
+            </p>
 
-            <a href="#services" class="btn btn-primary">
-                Explore Services
-            </a>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn btn-primary">
+                    Plan My Trip
+                </a>
 
-            <a href="#contact" class="btn btn-outline">
-                Contact Us
-            </a>
+                <a href="#offers" class="btn btn-secondary">
+                    View Packages
+                </a>
+            </div>
 
         </div>
 
@@ -464,6 +779,84 @@ footer strong{
 
 </section>
 
+<!-- SEARCH / ENQUIRY -->
+<div class="search-wrap">
+
+    <div class="container">
+
+        <div class="search-box">
+
+            <div class="search-tabs">
+
+                <button class="search-tab active" onclick="setTab(this)">
+                    ✈ Flights
+                </button>
+
+                <button class="search-tab" onclick="setTab(this)">
+                    🏨 Hotels
+                </button>
+
+                <button class="search-tab" onclick="setTab(this)">
+                    🧳 Holidays
+                </button>
+
+                <button class="search-tab" onclick="setTab(this)">
+                    🛂 Visa
+                </button>
+
+            </div>
+
+            <form class="search-form"
+                  onsubmit="sendSearch(event)">
+
+                <div class="input-group">
+                    <label>FROM</label>
+                    <input
+                        id="from"
+                        type="text"
+                        placeholder="Dhaka"
+                        required>
+                </div>
+
+                <div class="input-group">
+                    <label>TO</label>
+                    <input
+                        id="to"
+                        type="text"
+                        placeholder="Destination"
+                        required>
+                </div>
+
+                <div class="input-group">
+                    <label>TRAVEL DATE</label>
+                    <input
+                        id="date"
+                        type="date"
+                        required>
+                </div>
+
+                <div class="input-group">
+                    <label>TRAVELLERS</label>
+                    <select id="travellers">
+                        <option>1 Traveller</option>
+                        <option>2 Travellers</option>
+                        <option>3 Travellers</option>
+                        <option>4 Travellers</option>
+                        <option>5+ Travellers</option>
+                    </select>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    Search
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
 
 <!-- SERVICES -->
 <section id="services">
@@ -471,63 +864,45 @@ footer strong{
     <div class="container">
 
         <div class="section-title">
-            <h2>Our Services</h2>
-            <p>Complete travel solutions for your next journey</p>
+            <h2>Our Travel Services</h2>
+            <p>Everything you need for a smooth and memorable journey.</p>
         </div>
 
         <div class="services">
 
-            <div class="card">
-                <div class="icon">✈️</div>
-                <h3>Air Ticketing</h3>
+            <div class="service-card">
+                <div class="service-icon">✈️</div>
+                <h3>Flight Tickets</h3>
                 <p>
                     Domestic and international flight
-                    ticketing assistance.
+                    ticket booking assistance.
                 </p>
             </div>
 
-            <div class="card">
-                <div class="icon">🌍</div>
+            <div class="service-card">
+                <div class="service-icon">🛂</div>
                 <h3>Visa Assistance</h3>
                 <p>
-                    Guidance and assistance for your
-                    travel visa application.
+                    Guidance and assistance for
+                    tourist and travel visas.
                 </p>
             </div>
 
-            <div class="card">
-                <div class="icon">🏨</div>
+            <div class="service-card">
+                <div class="service-icon">🏨</div>
                 <h3>Hotel Booking</h3>
                 <p>
-                    Find suitable accommodation for
-                    business and leisure travel.
+                    Find suitable hotels for your
+                    business and holiday trips.
                 </p>
             </div>
 
-            <div class="card">
-                <div class="icon">🧳</div>
-                <h3>Tour Packages</h3>
+            <div class="service-card">
+                <div class="service-icon">🧳</div>
+                <h3>Holiday Packages</h3>
                 <p>
-                    Customized tour packages for
-                    memorable holidays.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🚕</div>
-                <h3>Travel Services</h3>
-                <p>
-                    Convenient travel and transportation
-                    support for your journey.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="icon">🌐</div>
-                <h3>Travel Consultation</h3>
-                <p>
-                    Professional guidance to help
-                    plan your international trip.
+                    Customized holiday packages
+                    for individuals and families.
                 </p>
             </div>
 
@@ -536,57 +911,6 @@ footer strong{
     </div>
 
 </section>
-
-
-<!-- ABOUT -->
-<section class="about" id="about">
-
-    <div class="container about-grid">
-
-        <div>
-            <h2>About Continental Flyway</h2>
-
-            <p>
-                Continental Flyway Tour & Travel provides
-                travel-related services designed to make
-                your journey easier and more convenient.
-            </p>
-
-            <p>
-                From flight tickets and visa assistance to
-                hotel reservations and tour planning, we
-                help travelers organize their trips with
-                practical support.
-            </p>
-
-            <ul class="check-list">
-                <li>Professional Travel Assistance</li>
-                <li>Air Ticketing Support</li>
-                <li>Visa Application Guidance</li>
-                <li>Tour & Hotel Booking</li>
-                <li>Customer-focused Service</li>
-            </ul>
-        </div>
-
-        <div class="card">
-
-            <div class="icon">🌎</div>
-
-            <h3>Your Travel, Our Support</h3>
-
-            <p>
-                Whether you are planning a holiday,
-                business trip, family vacation or
-                international journey, Continental Flyway
-                is ready to assist you.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
 
 <!-- DESTINATIONS -->
 <section id="destinations">
@@ -595,25 +919,49 @@ footer strong{
 
         <div class="section-title">
             <h2>Popular Destinations</h2>
-            <p>Explore your next destination</p>
+            <p>Choose your next adventure.</p>
         </div>
 
         <div class="destinations">
 
-            <div class="destination">
-                🇪🇺 Europe
+            <div class="destination"
+                 style="background-image:url('https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=800&q=80')">
+
+                <div class="destination-content">
+                    <h3>Europe</h3>
+                    <p>Discover Europe</p>
+                </div>
+
             </div>
 
-            <div class="destination">
-                🇦🇪 Dubai
+            <div class="destination"
+                 style="background-image:url('https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=800&q=80')">
+
+                <div class="destination-content">
+                    <h3>Dubai</h3>
+                    <p>Luxury & adventure</p>
+                </div>
+
             </div>
 
-            <div class="destination">
-                🇹🇭 Thailand
+            <div class="destination"
+                 style="background-image:url('https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=800&q=80')">
+
+                <div class="destination-content">
+                    <h3>Thailand</h3>
+                    <p>Tropical escape</p>
+                </div>
+
             </div>
 
-            <div class="destination">
-                🇲🇾 Malaysia
+            <div class="destination"
+                 style="background-image:url('https://images.unsplash.com/photo-1504306669228-6f0c6c0a8d4d?auto=format&fit=crop&w=800&q=80')">
+
+                <div class="destination-content">
+                    <h3>Malaysia</h3>
+                    <p>Experience Asia</p>
+                </div>
+
             </div>
 
         </div>
@@ -622,99 +970,58 @@ footer strong{
 
 </section>
 
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
+<!-- OFFERS -->
+<section id="offers">
 
     <div class="container">
 
         <div class="section-title">
-            <h2>Contact Us</h2>
-            <p>Get in touch with Continental Flyway</p>
+            <h2>Featured Travel Packages</h2>
+            <p>Special journeys designed for you.</p>
         </div>
 
-        <div class="contact-grid">
+        <div class="offers">
 
-            <div class="contact-box">
+            <div class="offer-card">
 
-                <h3>📞 Phone</h3>
+                <div class="offer-img"
+                     style="background-image:url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff?auto=format&fit=crop&w=900&q=80')">
+                </div>
 
-                <p>
-                    <a href="tel:+8801998888321">
-                        +8801998888321
+                <div class="offer-body">
+                    <h3>European Discovery</h3>
+                    <p>
+                        Explore iconic European cities,
+                        culture and unforgettable experiences.
+                    </p>
+
+                    <a href="#contact"
+                       class="btn btn-primary">
+                        Enquire Now
                     </a>
-                </p>
-
-                <p>
-                    <a href="tel:+8801677055600">
-                        +8801677055600
-                    </a>
-                </p>
+                </div>
 
             </div>
 
+            <div class="offer-card">
 
-            <div class="contact-box">
+                <div class="offer-img"
+                     style="background-image:url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80')">
+                </div>
 
-                <h3>💬 WhatsApp</h3>
+                <div class="offer-body">
+                    <h3>Dubai Holiday</h3>
+                    <p>
+                        Discover modern Dubai, shopping,
+                        attractions and desert experiences.
+                    </p>
 
-                <p>
-                    <a href="https://wa.me/8801922422644"
-                       target="_blank">
-                        01922422644
+                    <a href="#contact"
+                       class="btn btn-primary">
+                        Enquire Now
                     </a>
-                </p>
-
-                <p>
-                    Chat with us on WhatsApp
-                </p>
+                </div>
 
             </div>
 
-
-            <div class="contact-box">
-
-                <h3>✉️ Email</h3>
-
-                <p>
-                    <a href="mailto:continentalflyway@gmail.com">
-                        continentalflyway@gmail.com
-                    </a>
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FOOTER -->
-<footer>
-
-    <div class="container">
-
-        <p>
-            © 2026 <strong>Continental Flyway Tour & Travel</strong>.
-            All Rights Reserved.
-        </p>
-
-    </div>
-
-</footer>
-
-
-<!-- WHATSAPP BUTTON -->
-<a
-    class="whatsapp"
-    href="https://wa.me/8801922422644"
-    target="_blank"
-    aria-label="Chat on WhatsApp"
->
-    ☎
-</a>
-
-</body>
-</html>
+            <div class="offer-card
