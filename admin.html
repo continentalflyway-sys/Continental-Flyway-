@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071a3d">
+
+<title>CONTINENTAL FLYWAY | Admin Panel</title>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:#f4f7fb;
+  color:#172033;
+}
+
+.hidden{
+  display:none!important;
+}
+
+/* LOGIN */
+
+.login-page{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  background:
+    radial-gradient(circle at top left,#19c5ff 0,transparent 35%),
+    linear-gradient(135deg,#071a3d,#102f68,#0a82b8);
+}
+
+.login-box{
+  width:100%;
+  max-width:430px;
+  background:rgba(255,255,255,.97);
+  padding:35px;
+  border-radius:25px;
+  box-shadow:0 25px 70px rgba(0,0,0,.25);
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:25px;
+}
+
+.logo h1{
+  font-size:25px;
+  color:#071a3d;
+  letter-spacing:1px;
+}
+
+.logo p{
+  color:#1385b8;
+  font-weight:700;
+  font-size:13px;
+  margin-top:6px;
+  letter-spacing:1px;
+}
+
+.login-box h2{
+  margin-bottom:8px;
+}
+
+.subtitle{
+  color:#68758a;
+  margin-bottom:25px;
+  font-size:14px;
+}
+
+label{
+  display:block;
+  font-size:13px;
+  font-weight:700;
+  margin:15px 0 7px;
+}
+
+input,textarea,select{
+  width:100%;
+  padding:13px 14px;
+  border:1px solid #d8e0eb;
+  border-radius:11px;
+  font-size:15px;
+  outline:none;
+  background:#fff;
+}
+
+input:focus,textarea:focus,select:focus{
+  border-color:#159bd0;
+  box-shadow:0 0 0 3px rgba(21,155,208,.1);
+}
+
+button{
+  border:0;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.primary-btn{
+  width:100%;
+  margin-top:20px;
+  padding:14px;
+  border-radius:11px;
+  color:#fff;
+  background:linear-gradient(135deg,#087cc1,#13b5d8);
+  font-size:15px;
+}
+
+.message{
+  margin-top:15px;
+  padding:11px;
+  border-radius:9px;
+  display:none;
+  font-size:13px;
+}
+
+.message.error{
+  display:block;
+  background:#fff0f0;
+  color:#c62828;
+}
+
+.message.success{
+  display:block;
+  background:#eafaf1;
+  color:#16834b;
+}
+
+/* ADMIN */
+
+.admin-layout{
+  min-height:100vh;
+  display:flex;
+}
+
+.sidebar{
+  width:250px;
+  background:#071a3d;
+  color:white;
+  padding:22px 15px;
+  position:fixed;
+  top:0;
+  bottom:0;
+  left:0;
+  overflow-y:auto;
+}
+
+.brand{
+  padding:10px;
+  margin-bottom:25px;
+}
+
+.brand h2{
+  font-size:19px;
+}
+
+.brand p{
+  font-size:11px;
+  color:#8ddfff;
+  margin-top:5px;
+}
+
+.nav-btn{
+  display:block;
+  width:100%;
+  text-align:left;
+  padding:13px 14px;
+  background:transparent;
+  color:#d8e5f8;
+  border-radius:10px;
+  margin-bottom:5px;
+  font-size:14px;
+}
+
+.nav-btn:hover,
+.nav-btn.active{
+  background:#12386f;
+  color:#fff;
+}
+
+.logout{
+  margin-top:25px;
+  background:#a9283f;
+  color:#fff;
+}
+
+.main{
+  margin-left:250px;
+  width:calc(100% - 250px);
+  padding:25px;
+}
+
+.topbar{
+  background:#fff;
+  border-radius:16px;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  margin-bottom:25px;
+  box-shadow:0 5px 20px rgba(20,40,80,.06);
+}
+
+.topbar h1{
+  font-size:22px;
+}
+
+.user-info{
+  font-size:13px;
+  color:#657287;
+}
+
+.section{
+  display:none;
+}
+
+.section.active{
+  display:block;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  margin-bottom:25px;
+}
+
+.card{
+  background:#fff;
+  border-radius:17px;
+  padding:22px;
+  box-shadow:0 5px 20px rgba(20,40,80,.06);
+}
+
+.card .icon{
+  font-size:28px;
+}
+
+.card h3{
+  font-size:26px;
+  margin-top:12px;
+}
+
+.card p{
+  color:#728096;
+  font-size:13px;
+  margin-top:4px;
+}
+
+.panel{
+  background:#fff;
+  border-radius:17px;
+  padding:22px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px rgba(20,40,80,.06);
+}
+
+.panel h2{
+  margin-bottom:15px;
+  font-size:19px;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.full{
+  grid-column:1/-1;
+}
+
+.save-btn{
+  margin-top:18px;
+  padding:12px 20px;
+  border-radius:10px;
+  background:#087cc1;
+  color:#fff;
+}
+
+.info{
+  background:#eef8ff;
+  border-left:4px solid #159bd0;
+  padding:13px;
+  border-radius:8px;
+  font-size:13px;
+  line-height:1.6;
+}
+
+.mobile-menu{
+  display:none;
+}
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+  .sidebar{
+    transform:translateX(-100%);
+    transition:.25s;
+    z-index:20;
+  }
+
+  .sidebar.open{
+    transform:translateX(0);
+  }
+
+  .main{
+    margin-left:0;
+    width:100%;
+    padding:15px;
+  }
+
+  .mobile-menu{
+    display:block;
+    background:#071a3d;
+    color:white;
+    padding:10px 13px;
+    border-radius:9px;
+    font-size:18px;
+  }
+
+  .topbar{
+    padding:14px;
+  }
+
+  .topbar h1{
+    font-size:18px;
+  }
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .full{
+    grid-column:auto;
+  }
+}
+
+@media(max-width:500px){
+
+  .cards{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .card{
+    padding:16px;
+  }
+
+  .card h3{
+    font-size:22px;
+  }
+
+  .login-box{
+    padding:25px 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+
+<div id="loginPage" class="login-page">
+
+  <div class="login-box">
+
+    <div class="logo">
+      <h1>CONTINENTAL FLYWAY</h1>
+      <p>TRAVEL • CAREER • OPPORTUNITY</p>
+    </div>
+
+    <h2>Admin Login</h2>
+
+    <p class="subtitle">
+      Secure access to your website administration panel.
+    </p>
+
+    <form id="loginForm">
+
+      <label>Email</label>
+
+      <input
+        id="email"
+        type="email"
+        placeholder="Admin email"
+        required
+        autocomplete="username"
+      >
+
+      <label>Password</label>
+
+      <input
+        id="password"
+        type="password"
+        placeholder="Password"
+        required
+        autocomplete="current-password"
+      >
+
+      <button class="primary-btn" type="submit">
+        Login to Admin Panel
+      </button>
+
+    </form>
+
+    <div id="loginMessage" class="message"></div>
+
+  </div>
+
+</div>
+
+
+<!-- ADMIN PANEL -->
+
+<div id="adminPanel" class="admin-layout hidden">
+
+  <aside id="sidebar" class="sidebar">
+
+    <div class="brand">
+      <h2>CONTINENTAL FLYWAY</h2>
+      <p>ADMINISTRATION</p>
+    </div>
+
+    <button class="nav-btn active" data-section="dashboard">
+      📊 Dashboard
+    </button>
+
+    <button class="nav-btn" data-section="settings">
+      ⚙️ Website Settings
+    </button>
+
+    <button class="nav-btn" data-section="jobs">
+      💼 Jobs Abroad
+    </button>
+
+    <button class="nav-btn" data-section="countries">
+      🌍 Countries
+    </button>
+
+    <button class="nav-btn" data-section="tours">
+      🧳 Tour Packages
+    </button>
+
+    <button class="nav-btn" data-section="team">
+      👥 Team
+    </button>
+
+    <button class="nav-btn" data-section="applications">
+      📩 Applications
+    </button>
+
+    <button id="logoutBtn" class="nav-btn logout">
+      🚪 Logout
+    </button>
+
+  </aside>
+
+
+  <main class="main">
+
+    <div class="topbar">
+
+      <div>
+        <button id="mobileMenu" class="mobile-menu">☰</button>
+      </div>
+
+      <div>
+        <h1 id="pageTitle">Dashboard</h1>
+      </div>
+
+      <div class="user-info">
+        <span id="adminEmail">Admin</span>
+      </div>
+
+    </div>
+
+
+    <!-- DASHBOARD -->
+
+    <section id="dashboard" class="section active">
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">💼</div>
+          <h3 id="jobCount">—</h3>
+          <p>Jobs Abroad</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌍</div>
+          <h3 id="countryCount">—</h3>
+          <p>Countries</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🧳</div>
+          <h3 id="tourCount">—</h3>
+          <p>Tour Packages</p>
+        </div>
+
+        <div class="card">
+          <div class="icon">📩</div>
+          <h3 id="applicationCount">—</h3>
+          <p>Applications</p>
+        </div>
+
+      </div>
+
+
+      <div class="panel">
+
+        <h2>Welcome to Continental Flyway Admin</h2>
+
+        <div class="info">
+          From this panel you will be able to manage website content,
+          overseas jobs, countries, tour packages, team information
+          and customer applications.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- SETTINGS -->
+
+    <section id="settings" class="section">
+
+      <div class="panel">
+
+        <h2>Website Settings</h2>
+
+        <div class="form-grid">
+
+          <div>
+            <label>Website Name</label>
+            <input id="siteName" value="CONTINENTAL FLYWAY">
+          </div>
+
+          <div>
+            <label>Tagline</label>
+            <input id="siteTagline"
+              value="TRAVEL • CAREER • OPPORTUNITY">
+          </div>
+
+          <div>
+            <label>Phone 1</label>
+            <input id="phone1" value="+8801998888321">
+          </div>
+
+          <div>
+            <label>Phone 2</label>
+            <input id="phone2" value="+8801677055600">
+          </div>
+
+          <div>
+            <label>WhatsApp</label>
+            <input id="whatsapp" value="+8801922422644">
+          </div>
+
+          <div>
+            <label>Email</label>
+            <input id="siteEmail"
+              value="continentalflyway@gmail.com">
+          </div>
+
+          <div class="full">
+            <label>Facebook</label>
+            <input id="facebook"
+              value="https://facebook.com/ContinentalFlywayy">
+          </div>
+
+        </div>
+
+        <button id="saveSettings" class="save-btn">
+          Save Website Settings
+        </button>
+
+        <div id="settingsMessage" class="message"></div>
+
+      </div>
+
+    </section>
+
+
+    <!-- JOBS -->
+
+    <section id="jobs" class="section">
+
+      <div class="panel">
+
+        <h2>Jobs Abroad</h2>
+
+        <div class="info">
+          Job management module is ready for the next database setup.
+          You will be able to add, edit and remove vacancies here.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COUNTRIES -->
+
+    <section id="countries" class="section">
+
+      <div class="panel">
+
+        <h2>Countries</h2>
+
+        <div class="info">
+          Country management module is ready for the next database setup.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TOURS -->
+
+    <section id="tours" class="section">
+
+      <div class="panel">
+
+        <h2>Tour Packages</h2>
+
+        <div class="info">
+          Tour package management module is ready for the next database setup.
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TEAM -->
+
+    <section id="team" class="section">
+
+      <div class="panel">
+
+        <h2>Leadership Team</h2>
+
+        <div class="form-grid">
+
+          <div>
+            <label>Founder</label>
+            <input value="MD Easin Arafat">
+          </div>
+
+          <div>
+            <label>Co-founder</label>
+            <input value="Shahanul Islam">
+          </div>
+
+          <div>
+            <label>CEO</label>
+            <input value="Bahalul Islam">
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- APPLICATIONS -->
+
+    <section id="applications" class="section">
+
+      <div class="panel">
+
+        <h2>Applications & Inquiries</h2>
+
+        <div class="info">
+          Customer applications and website inquiries will appear here
+          after the applications table is connected.
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</div>
+
+
+<script>
+
+const SUPABASE_URL =
+"https://rkwntnjxifommqipzktu.supabase.co";
+
+const SUPABASE_PUBLISHABLE_KEY =
+"sb_publishable_LI4tuuav3kRnF7NhshyMZQ_EyeDD2qo";
+
+const supabaseClient =
+window.supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_PUBLISHABLE_KEY
+);
+
+
+/* ELEMENTS */
+
+const loginPage =
+document.getElementById("loginPage");
+
+const adminPanel =
+document.getElementById("adminPanel");
+
+const loginForm =
+document.getElementById("loginForm");
+
+const loginMessage =
+document.getElementById("loginMessage");
+
+const adminEmail =
+document.getElementById("adminEmail");
+
+
+/* MESSAGE */
+
+function showMessage(element,text,type){
+
+  element.textContent = text;
+
+  element.className =
+    "message " + type;
+
+}
+
+
+/* ADMIN CHECK */
+
+async function checkAdmin(){
+
+  const {
+    data: { user }
+  } = await supabaseClient.auth.getUser();
+
+  if(!user){
+
+    showLogin();
+
+    return;
+
+  }
+
+  const { data, error } =
+    await supabaseClient
+      .from("admins")
+      .select("user_id,name,role,active")
+      .eq("user_id",user.id)
+      .eq("active",true)
+      .maybeSingle();
+
+  if(error || !data){
+
+    await supabaseClient.auth.signOut();
+
+    showLogin();
+
+    showMessage(
+      loginMessage,
+      "This account is not authorized as an administrator.",
+      "error"
+    );
+
+    return;
+
+  }
+
+  showAdmin(user);
+
+}
+
+
+/* SHOW LOGIN */
+
+function showLogin(){
+
+  loginPage.classList.remove("hidden");
+
+  adminPanel.classList.add("hidden");
+
+}
+
+
+/* SHOW ADMIN */
+
+function showAdmin(user){
+
+  loginPage.classList.add("hidden");
+
+  adminPanel.classList.remove("hidden");
+
+  adminEmail.textContent =
+    user.email || "Administrator";
+
+  loadCounts();
+
+}
+
+
+/* LOGIN */
+
+loginForm.addEventListener(
+  "submit",
+  async function(event){
+
+    event.preventDefault();
+
+    const email =
+      document.getElementById("email").value.trim();
+
+    const password =
+      document.getElementById("password").value;
+
+    showMessage(
+      loginMessage,
+      "Signing in...",
+      "success"
+    );
+
+    const { data, error } =
+      await supabaseClient.auth.signInWithPassword({
+        email,
+        password
+      });
+
+    if(error){
+
+      showMessage(
+        loginMessage,
+        error.message,
+        "error"
+      );
+
+      return;
+
+    }
+
+    await checkAdmin();
+
+  }
+);
+
+
+/* LOGOUT */
+
+document.getElementById("logoutBtn")
+.addEventListener("click",async()=>{
+
+  await supabaseClient.auth.signOut();
+
+  showLogin();
+
+});
+
+
+/* NAVIGATION */
+
+document.querySelectorAll(".nav-btn[data-section]")
+.forEach(button=>{
+
+  button.addEventListener("click",()=>{
+
+    const section =
+      button.dataset.section;
+
+    document.querySelectorAll(".nav-btn")
+      .forEach(btn =>
+        btn.classList.remove("active")
+      );
+
+    button.classList.add("active");
+
+    document.querySelectorAll(".section")
+      .forEach(item =>
+        item.classList.remove("active")
+      );
+
+    document
+      .getElementById(section)
+      .classList.add("active");
+
+    const titles = {
+      dashboard:"Dashboard",
+      settings:"Website Settings",
+      jobs:"Jobs Abroad",
+      countries:"Countries",
+      tours:"Tour Packages",
+      team:"Leadership Team",
+      applications:"Applications & Inquiries"
+    };
+
+    document.getElementById("pageTitle")
+      .textContent = titles[section];
+
+    document.getElementById("sidebar")
+      .classList.remove("open");
+
+  });
+
+});
+
+
+/* MOBILE MENU */
+
+document.getElementById("mobileMenu")
+.addEventListener("click",()=>{
+
+  document.getElementById("sidebar")
+    .classList.toggle("open");
+
+});
+
+
+/* COUNTS */
+
+async function countTable(
+  table,
+  elementId
+){
+
+  const { count, error } =
+    await supabaseClient
+      .from(table)
+      .select("*",{count:"exact",head:true});
+
+  if(!error){
+
+    document.getElementById(elementId)
+      .textContent = count ?? 0;
+
+  }else{
+
+    document.getElementById(elementId)
+      .textContent = "—";
+
+  }
+
+}
+
+
+async function loadCounts(){
+
+  countTable("jobs","jobCount");
+
+  countTable("countries","countryCount");
+
+  countTable("tours","tourCount");
+
+  countTable("inquiries","applicationCount");
+
+}
+
+
+/* SAVE SETTINGS */
+
+document.getElementById("saveSettings")
+.addEventListener("click",async()=>{
+
+  const message =
+    document.getElementById("settingsMessage");
+
+  showMessage(
+    message,
+    "Website settings database module will be connected next.",
+    "success"
+  );
+
+});
+
+
+/* AUTH STATE */
+
+supabaseClient.auth.onAuthStateChange(
+  async(event,session)=>{
+
+    if(session){
+
+      await checkAdmin();
+
+    }else{
+
+      showLogin();
+
+    }
+
+  }
+);
+
+
+/* START */
+
+checkAdmin();
+
+</script>
+
+</body>
+</html>
