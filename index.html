@@ -4,16 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Continental Flyway | Travel • Career • Opportunity</title>
+<title>CONTINENTAL FLYWAY | Travel • Career • Opportunity</title>
 
-<meta name="description" content="Continental Flyway - Travel, Career & Opportunity. Visa processing, overseas employment, tour packages, air ticketing, hotel booking and global mobility services.">
-
-<meta property="og:title" content="Continental Flyway">
-<meta property="og:description" content="Travel • Career • Opportunity | THE WHOLE WORLD IS YOUR DESTINATION">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://continentalflyway-sys.github.io/continental-flyway/">
+<meta name="description" content="Continental Flyway - Overseas Employment, Manpower Recruitment, Jobs Abroad, Visa and Documentation Assistance, and Tour Packages.">
 
 <style>
+/* =========================
+   GLOBAL
+========================= */
+
 *{
     margin:0;
     padding:0;
@@ -25,10 +24,11 @@ html{
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    color:#172033;
-    background:#f7f9fc;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#14213d;
+    background:#ffffff;
     line-height:1.6;
+    overflow-x:hidden;
 }
 
 a{
@@ -42,12 +42,15 @@ a{
     margin:auto;
 }
 
-/* TOP BAR */
+/* =========================
+   TOP BAR
+========================= */
+
 .topbar{
-    background:#071b3a;
-    color:#fff;
-    padding:9px 0;
+    background:#06163b;
+    color:#ffffff;
     font-size:14px;
+    padding:9px 0;
 }
 
 .topbar-content{
@@ -55,23 +58,23 @@ a{
     justify-content:space-between;
     align-items:center;
     gap:15px;
+    flex-wrap:wrap;
 }
 
 .topbar a{
-    color:#fff;
+    color:#ffffff;
 }
 
-.topbar a:hover{
-    color:#f5c542;
-}
+/* =========================
+   HEADER
+========================= */
 
-/* HEADER */
 header{
-    background:#fff;
     position:sticky;
     top:0;
-    z-index:999;
-    box-shadow:0 3px 15px rgba(0,0,0,.08);
+    z-index:1000;
+    background:rgba(255,255,255,0.97);
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
 }
 
 .navbar{
@@ -82,183 +85,260 @@ header{
     gap:20px;
 }
 
+/* LOGO */
+
 .logo{
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:12px;
 }
 
 .logo-icon{
-    font-size:34px;
+    width:50px;
+    height:50px;
+    border-radius:15px;
+    background:linear-gradient(135deg,#075cff,#13b8ff);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#fff;
+    font-size:25px;
+    font-weight:900;
+    box-shadow:0 8px 20px rgba(7,92,255,0.3);
 }
 
-.logo-text h1{
-    font-size:23px;
-    color:#08265a;
+.logo-text strong{
+    display:block;
+    color:#06163b;
+    font-size:22px;
+    line-height:1;
     letter-spacing:.5px;
 }
 
-.logo-text p{
-    font-size:11px;
-    color:#c39200;
+.logo-text span{
+    display:block;
+    color:#ff7417;
+    font-size:10px;
     font-weight:bold;
-    letter-spacing:1px;
+    letter-spacing:2px;
+    margin-top:5px;
 }
 
-.nav-links{
+/* MENU */
+
+.nav-menu{
     display:flex;
     align-items:center;
-    gap:24px;
-    list-style:none;
+    gap:6px;
 }
 
-.nav-links a{
+.nav-menu a{
+    padding:11px 13px;
+    border-radius:10px;
     font-size:14px;
-    font-weight:600;
-    color:#172033;
+    font-weight:bold;
 }
 
-.nav-links a:hover{
-    color:#0b63ce;
+.nav-menu a:hover{
+    background:#eef5ff;
+    color:#075cff;
 }
 
-.menu-btn{
+.nav-menu .apply-btn{
+    background:linear-gradient(135deg,#ff7417,#ff9c28);
+    color:#fff;
+    padding:12px 18px;
+}
+
+.menu-toggle{
     display:none;
-    border:0;
+    border:none;
     background:none;
-    font-size:28px;
+    color:#06163b;
+    font-size:30px;
     cursor:pointer;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
+
 .hero{
-    min-height:560px;
-    display:flex;
-    align-items:center;
+    position:relative;
+    overflow:hidden;
+    color:#fff;
+    padding:95px 0 90px;
+
     background:
-    linear-gradient(90deg,rgba(3,18,45,.94),rgba(5,42,92,.78)),
-    radial-gradient(circle at right,#1777d2,#061b3b);
-    color:white;
+        radial-gradient(
+            circle at 85% 15%,
+            rgba(19,184,255,.55),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(255,194,71,.25),
+            transparent 25%
+        ),
+        linear-gradient(
+            125deg,
+            #061536,
+            #0b2f73 55%,
+            #075ed7
+        );
 }
 
 .hero-content{
-    max-width:760px;
-    padding:75px 0;
+    display:grid;
+    grid-template-columns:1.15fr .85fr;
+    gap:55px;
+    align-items:center;
 }
 
 .hero-badge{
     display:inline-block;
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.25);
     padding:8px 15px;
-    border-radius:30px;
-    margin-bottom:20px;
-    font-size:14px;
-}
-
-.hero h2{
-    font-size:52px;
-    line-height:1.1;
+    border-radius:50px;
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.2);
+    font-size:13px;
+    font-weight:bold;
     margin-bottom:20px;
 }
 
-.hero h2 span{
-    color:#f5c542;
+.hero h1{
+    font-size:clamp(43px,6vw,78px);
+    line-height:.95;
+    letter-spacing:-2px;
+    margin-bottom:18px;
+}
+
+.hero h1 span{
+    color:#ffc247;
+}
+
+.hero-tagline{
+    font-size:19px;
+    font-weight:bold;
+    letter-spacing:2px;
+    color:#d9ecff;
+    margin-bottom:20px;
 }
 
 .hero p{
-    font-size:19px;
-    max-width:680px;
-    opacity:.95;
-    margin-bottom:30px;
+    max-width:650px;
+    color:#dce9ff;
+    font-size:17px;
+    margin-bottom:28px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
 }
 
 .btn{
-    display:inline-block;
-    padding:13px 22px;
-    border-radius:7px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    padding:14px 23px;
+    border-radius:12px;
     font-weight:bold;
-    margin:5px;
-    transition:.25s;
+    transition:.2s;
 }
 
 .btn:hover{
     transform:translateY(-2px);
 }
 
-.btn-primary{
-    background:#f5c542;
-    color:#071b3a;
-}
-
-.btn-secondary{
-    border:1px solid #fff;
+.btn-orange{
+    background:linear-gradient(135deg,#ff7417,#ff9f2f);
     color:#fff;
 }
 
-.btn-whatsapp{
-    background:#20c767;
-    color:white;
-}
-
-/* STATS */
-.stats{
-    margin-top:-40px;
-    position:relative;
-}
-
-.stats-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
+.btn-white{
     background:#fff;
-    border-radius:14px;
-    box-shadow:0 12px 35px rgba(0,0,0,.1);
-    overflow:hidden;
+    color:#06163b;
 }
 
-.stat{
-    text-align:center;
-    padding:27px 15px;
-    border-right:1px solid #eee;
+.hero-card{
+    padding:30px;
+    border-radius:28px;
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    box-shadow:0 25px 60px rgba(0,0,0,.2);
 }
 
-.stat:last-child{
-    border-right:0;
+.hero-card h3{
+    font-size:25px;
+    margin-bottom:20px;
 }
 
-.stat h3{
-    color:#0b63ce;
-    font-size:28px;
+.hero-stats{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:13px;
 }
 
-.stat p{
-    color:#667085;
-    font-size:14px;
+.hero-stat{
+    background:rgba(255,255,255,.1);
+    padding:20px;
+    border-radius:17px;
 }
 
-/* SECTIONS */
-section{
-    padding:80px 0;
+.hero-stat strong{
+    display:block;
+    font-size:27px;
+    margin-bottom:4px;
+}
+
+.hero-stat span{
+    color:#dce9ff;
+    font-size:13px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section{
+    padding:85px 0;
+}
+
+.section-light{
+    background:#f5f8ff;
 }
 
 .section-title{
+    max-width:760px;
     text-align:center;
-    margin-bottom:45px;
+    margin:0 auto 45px;
+}
+
+.eyebrow{
+    color:#ff7417;
+    font-size:12px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
 }
 
 .section-title h2{
-    font-size:34px;
-    color:#08265a;
-    margin-bottom:10px;
+    color:#06163b;
+    font-size:clamp(30px,4vw,46px);
+    line-height:1.1;
+    margin:9px 0 13px;
 }
 
 .section-title p{
-    max-width:680px;
-    margin:auto;
-    color:#667085;
+    color:#64748b;
 }
 
-/* CARDS */
+/* =========================
+   SERVICES
+========================= */
+
 .cards{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -266,310 +346,392 @@ section{
 }
 
 .card{
-    background:white;
+    background:#fff;
+    border:1px solid #e4ebf5;
+    border-radius:22px;
     padding:28px;
-    border-radius:13px;
-    box-shadow:0 6px 22px rgba(0,0,0,.07);
+    box-shadow:0 8px 28px rgba(7,26,61,.06);
     transition:.25s;
 }
 
 .card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 12px 28px rgba(0,0,0,.11);
+    transform:translateY(-6px);
+    box-shadow:0 18px 45px rgba(7,26,61,.14);
 }
 
-.card-icon{
-    font-size:34px;
-    margin-bottom:15px;
+.icon{
+    width:55px;
+    height:55px;
+    border-radius:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:linear-gradient(135deg,#eaf2ff,#dff8ff);
+    font-size:26px;
+    margin-bottom:17px;
 }
 
 .card h3{
-    color:#08265a;
-    margin-bottom:9px;
+    color:#06163b;
+    font-size:21px;
+    margin-bottom:8px;
 }
 
 .card p{
-    color:#667085;
+    color:#64748b;
     font-size:14px;
 }
 
-/* JOBS */
-.job-card{
-    border-left:4px solid #0b63ce;
+/* =========================
+   JOBS
+========================= */
+
+.job-badge{
+    display:inline-block;
+    padding:5px 9px;
+    background:#eaf2ff;
+    color:#075cff;
+    border-radius:30px;
+    font-size:11px;
+    font-weight:bold;
+    margin-bottom:10px;
 }
 
-.job-card h3{
-    font-size:18px;
-}
+/* =========================
+   COUNTRIES
+========================= */
 
-/* COUNTRIES */
 .country-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:18px;
+    gap:16px;
 }
 
 .country{
-    background:white;
-    padding:24px;
-    border-radius:12px;
-    text-align:center;
-    box-shadow:0 5px 18px rgba(0,0,0,.06);
+    padding:23px;
+    border-radius:18px;
+    border:1px solid #e4ebf5;
+    background:#fff;
+    display:flex;
+    align-items:center;
+    gap:13px;
+    font-weight:bold;
+    color:#06163b;
+    box-shadow:0 7px 20px rgba(7,26,61,.05);
 }
 
-.country strong{
-    display:block;
-    color:#08265a;
-    margin-top:8px;
+.country-icon{
+    font-size:28px;
 }
 
-/* ABOUT */
-.about-grid{
+/* =========================
+   PROCESS
+========================= */
+
+.process{
     display:grid;
-    grid-template-columns:1.3fr .7fr;
-    gap:35px;
-    align-items:start;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
-.about-box{
-    background:white;
-    padding:32px;
-    border-radius:14px;
-    box-shadow:0 6px 22px rgba(0,0,0,.07);
+.process-item{
+    text-align:center;
 }
 
-.about-box h3{
-    color:#08265a;
-    margin-bottom:15px;
+.process-number{
+    width:55px;
+    height:55px;
+    margin:0 auto 16px;
+    border-radius:50%;
+    background:#075cff;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:19px;
+    font-weight:bold;
 }
 
-.about-box p{
-    color:#667085;
+.process-item h3{
+    font-size:18px;
+    margin-bottom:7px;
+    color:#06163b;
 }
 
-/* LEADERSHIP */
-.leader-grid{
+.process-item p{
+    font-size:14px;
+    color:#64748b;
+}
+
+/* =========================
+   TOURS
+========================= */
+
+.tour-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+}
+
+.tour{
+    min-height:235px;
+    padding:28px;
+    border-radius:24px;
+    color:#fff;
+    background:linear-gradient(135deg,#075cff,#13b8ff);
+}
+
+.tour:nth-child(2){
+    background:linear-gradient(135deg,#ff7417,#ffc247);
+}
+
+.tour:nth-child(3){
+    background:linear-gradient(135deg,#512da8,#075cff);
+}
+
+.tour h3{
+    font-size:25px;
+    margin-bottom:9px;
+}
+
+.tour p{
+    color:#fff;
+    opacity:.92;
+}
+
+.tour-label{
+    display:inline-block;
+    margin-top:28px;
+    padding:7px 12px;
+    border-radius:30px;
+    background:rgba(255,255,255,.18);
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-visual{
+    min-height:330px;
+    border-radius:30px;
+    padding:40px;
+    background:linear-gradient(145deg,#06163b,#075cff);
+    color:#fff;
+    box-shadow:0 20px 50px rgba(7,26,61,.2);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.about-visual .big{
+    font-size:70px;
+    font-weight:900;
+    color:#ffc247;
+}
+
+.about-visual h3{
+    font-size:28px;
+    margin-top:10px;
+}
+
+.about-visual p{
+    color:#dce9ff;
+    margin-top:5px;
+}
+
+.about-text h2{
+    color:#06163b;
+    font-size:clamp(30px,4vw,44px);
+    line-height:1.1;
+    margin:8px 0 17px;
+}
+
+.about-text p{
+    color:#64748b;
+    margin-bottom:12px;
+}
+
+.check-list{
+    margin-top:22px;
+}
+
+.check{
+    margin:9px 0;
+    font-weight:bold;
+}
+
+.check:before{
+    content:"✓";
+    color:#075cff;
+    margin-right:9px;
+}
+
+/* =========================
+   LEADERSHIP
+========================= */
+
+.leaders{
     display:grid;
     grid-template-columns:repeat(3,1fr);
     gap:22px;
 }
 
 .leader{
-    background:white;
     text-align:center;
-    padding:30px 20px;
-    border-radius:14px;
-    box-shadow:0 6px 20px rgba(0,0,0,.07);
 }
 
-.leader-avatar{
-    width:75px;
-    height:75px;
-    margin:auto;
+.avatar{
+    width:105px;
+    height:105px;
+    margin:0 auto 17px;
+    border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:#08265a;
-    color:white;
-    border-radius:50%;
-    font-size:25px;
-    font-weight:bold;
+    background:linear-gradient(135deg,#075cff,#ff7417);
+    color:#fff;
+    font-size:30px;
+    font-weight:900;
+    box-shadow:0 10px 28px rgba(7,92,255,.2);
 }
 
 .leader h3{
-    margin-top:15px;
-    color:#08265a;
+    color:#06163b;
+    font-size:20px;
 }
 
 .leader p{
-    color:#667085;
-}
-
-/* APPLICATION */
-.application{
-    background:#08265a;
-    color:white;
-}
-
-.application .section-title h2{
-    color:white;
-}
-
-.application .section-title p{
-    color:#d9e2f0;
-}
-
-.form{
-    max-width:850px;
-    margin:auto;
-    background:white;
-    padding:32px;
-    border-radius:14px;
-    color:#172033;
-}
-
-.form-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:17px;
-}
-
-.form-group{
-    margin-bottom:5px;
-}
-
-.form-group.full{
-    grid-column:1/-1;
-}
-
-.form label{
-    display:block;
-    font-size:13px;
+    color:#ff7417;
     font-weight:bold;
-    margin-bottom:6px;
+    font-size:13px;
 }
 
-.form input,
-.form select,
-.form textarea{
-    width:100%;
-    border:1px solid #d8dee9;
-    border-radius:7px;
-    padding:12px;
-    font:inherit;
-    outline:none;
-}
+/* =========================
+   CONTACT
+========================= */
 
-.form textarea{
-    min-height:120px;
-    resize:vertical;
-}
-
-.form input:focus,
-.form select:focus,
-.form textarea:focus{
-    border-color:#0b63ce;
-}
-
-.form button{
-    border:0;
-    cursor:pointer;
-}
-
-/* CONTACT */
-.contact-grid{
+.contact{
     display:grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:.85fr 1.15fr;
     gap:25px;
 }
 
-.contact-box{
-    background:white;
-    padding:30px;
-    border-radius:14px;
-    box-shadow:0 6px 22px rgba(0,0,0,.07);
+.contact-info{
+    background:#06163b;
+    color:#fff;
+    border-radius:26px;
+    padding:34px;
+}
+
+.contact-info h2{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.contact-info>p{
+    color:#dce9ff;
 }
 
 .contact-item{
     display:flex;
     gap:13px;
-    margin:18px 0;
+    margin-top:22px;
 }
 
 .contact-item strong{
     display:block;
-    color:#08265a;
 }
 
 .contact-item span{
-    color:#667085;
+    color:#c8d7f3;
+    font-size:14px;
 }
 
-/* SOCIAL */
-.social-links{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-    margin-top:22px;
+.form{
+    background:#fff;
+    border:1px solid #e4ebf5;
+    border-radius:26px;
+    padding:30px;
+    box-shadow:0 18px 50px rgba(7,26,61,.12);
 }
 
-.social-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:11px 17px;
-    border-radius:7px;
+.form h2{
+    color:#06163b;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.form-group label{
+    display:block;
+    font-size:13px;
     font-weight:bold;
-    color:white;
-    border:0;
+    color:#06163b;
+    margin-bottom:6px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    border:1px solid #d7e1ef;
+    border-radius:11px;
+    padding:13px;
+    font-family:inherit;
+    font-size:14px;
+    outline:none;
+    background:#fbfdff;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    border-color:#075cff;
+    box-shadow:0 0 0 3px rgba(7,92,255,.1);
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+.form button{
+    border:none;
+    width:100%;
     cursor:pointer;
-    font-size:14px;
 }
 
-.facebook{
-    background:#1877f2;
+.form-note{
+    color:#64748b;
+    font-size:12px;
+    margin-top:10px;
 }
 
-.whatsapp{
-    background:#20c767;
-}
+/* =========================
+   FOOTER
+========================= */
 
-.share{
-    background:#0b63ce;
-}
-
-.copy{
-    background:#555;
-}
-
-/* SHARE AREA */
-.share-area{
-    margin-top:25px;
-    text-align:center;
-    background:#f2f6fb;
-    padding:25px;
-    border-radius:12px;
-}
-
-.share-area h3{
-    color:#08265a;
-    margin-bottom:7px;
-}
-
-.share-area p{
-    color:#667085;
-    font-size:14px;
-    margin-bottom:14px;
-}
-
-/* DISCLAIMER */
-.disclaimer{
-    background:#fff8df;
-    border-top:1px solid #f2df99;
-    border-bottom:1px solid #f2df99;
-}
-
-.disclaimer-box{
-    text-align:center;
-    max-width:950px;
-    margin:auto;
-}
-
-.disclaimer h3{
-    color:#765b00;
-    margin-bottom:10px;
-}
-
-.disclaimer p{
-    color:#675f45;
-    font-size:14px;
-}
-
-/* FOOTER */
 footer{
-    background:#06182f;
-    color:white;
-    padding:50px 0 20px;
+    background:#041126;
+    color:#b9c9e5;
+    padding:50px 0 25px;
 }
 
 .footer-grid{
@@ -579,96 +741,118 @@ footer{
 }
 
 footer h3{
-    margin-bottom:15px;
+    color:#fff;
+    margin-bottom:13px;
 }
 
-footer p,
-footer li{
-    color:#b9c5d6;
+.footer-brand{
+    font-size:27px;
+    color:#fff;
+    font-weight:900;
+}
+
+footer p{
     font-size:14px;
-}
-
-footer ul{
-    list-style:none;
-}
-
-footer li{
-    margin:8px 0;
+    margin:6px 0;
 }
 
 footer a:hover{
-    color:#f5c542;
+    color:#fff;
 }
 
-.footer-bottom{
-    margin-top:35px;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.12);
+.copyright{
+    border-top:1px solid rgba(255,255,255,.1);
     text-align:center;
-    color:#9eacc0;
+    margin-top:30px;
+    padding-top:18px;
     font-size:13px;
 }
 
-/* FLOATING WHATSAPP */
-.floating-whatsapp{
+/* =========================
+   FLOATING BUTTONS
+========================= */
+
+.floating{
     position:fixed;
-    right:20px;
-    bottom:20px;
-    width:58px;
-    height:58px;
+    right:18px;
+    bottom:18px;
+    z-index:999;
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+}
+
+.floating a{
+    width:50px;
+    height:50px;
     border-radius:50%;
-    background:#20c767;
-    color:white;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:28px;
-    box-shadow:0 6px 20px rgba(0,0,0,.25);
-    z-index:1000;
+    color:#fff;
+    font-size:21px;
+    box-shadow:0 8px 22px rgba(0,0,0,.2);
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
+.call{
+    background:#075cff;
+}
 
-    .nav-links{
-        display:none;
-        position:absolute;
-        top:78px;
-        left:0;
-        width:100%;
-        background:white;
-        flex-direction:column;
-        padding:20px;
-        box-shadow:0 10px 20px rgba(0,0,0,.1);
-    }
+.whatsapp{
+    background:#18b957;
+}
 
-    .nav-links.active{
-        display:flex;
-    }
+/* =========================
+   MOBILE
+========================= */
 
-    .menu-btn{
+@media(max-width:950px){
+
+    .menu-toggle{
         display:block;
     }
 
-    .hero h2{
-        font-size:40px;
+    .nav-menu{
+        display:none;
+        position:absolute;
+        left:0;
+        right:0;
+        top:78px;
+        background:#fff;
+        padding:15px 4%;
+        box-shadow:0 15px 30px rgba(0,0,0,.1);
+        flex-direction:column;
+        align-items:stretch;
     }
 
-    .stats-grid{
-        grid-template-columns:1fr 1fr;
+    .nav-menu.active{
+        display:flex;
+    }
+
+    .nav-menu a{
+        padding:13px;
+    }
+
+    .hero-content,
+    .about,
+    .contact{
+        grid-template-columns:1fr;
     }
 
     .cards{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
     .country-grid{
-        grid-template-columns:1fr 1fr;
+        grid-template-columns:repeat(2,1fr);
     }
 
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
+    .process{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .leaders{
+        grid-template-columns:repeat(3,1fr);
     }
 
     .footer-grid{
@@ -678,56 +862,92 @@ footer a:hover{
 
 @media(max-width:600px){
 
+    .topbar{
+        font-size:11px;
+    }
+
     .topbar-content{
-        flex-direction:column;
+        justify-content:center;
         text-align:center;
     }
 
-    .logo-text h1{
-        font-size:19px;
+    .top-links{
+        display:none;
+    }
+
+    .navbar{
+        min-height:70px;
+    }
+
+    .nav-menu{
+        top:70px;
+    }
+
+    .logo-icon{
+        width:42px;
+        height:42px;
+        font-size:20px;
+    }
+
+    .logo-text strong{
+        font-size:17px;
+    }
+
+    .logo-text span{
+        font-size:8px;
+        letter-spacing:1px;
     }
 
     .hero{
-        min-height:500px;
+        padding:65px 0 55px;
     }
 
-    .hero h2{
-        font-size:34px;
+    .hero h1{
+        font-size:43px;
     }
 
     .hero p{
-        font-size:16px;
+        font-size:15px;
     }
 
-    .stats-grid,
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .hero-buttons .btn{
+        width:100%;
+    }
+
+    .hero-stats{
+        grid-template-columns:1fr;
+    }
+
+    .section{
+        padding:60px 0;
+    }
+
     .cards,
     .country-grid,
-    .leader-grid,
-    .form-grid,
+    .process,
+    .tour-grid,
+    .leaders{
+        grid-template-columns:1fr;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
     .footer-grid{
         grid-template-columns:1fr;
     }
 
-    .stat{
-        border-right:0;
-        border-bottom:1px solid #eee;
-    }
-
-    section{
-        padding:60px 0;
-    }
-
-    .section-title h2{
-        font-size:28px;
-    }
-
-    .form-group.full{
-        grid-column:auto;
-    }
-
-    .social-btn{
-        width:100%;
-        justify-content:center;
+    .about-visual{
+        min-height:270px;
     }
 }
 </style>
@@ -735,326 +955,320 @@ footer a:hover{
 
 <body>
 
-<!-- TOP BAR -->
+<!-- =========================
+     TOP BAR
+========================= -->
+
 <div class="topbar">
     <div class="container topbar-content">
-        <div>
-            📞 <a href="tel:+8801998888321">+8801998888321</a>
-            &nbsp; | &nbsp;
-            💬 <a href="https://wa.me/8801922422644" target="_blank">WhatsApp</a>
-        </div>
 
         <div>
-            ✉️ <a href="mailto:continentalflyway@gmail.com">
-                continentalflyway@gmail.com
+            🌍 Travel • Career • Opportunity
+        </div>
+
+        <div class="top-links">
+            <a href="tel:+8801998888321">☎ +8801998888321</a>
+            <a href="tel:+8801677055600">☎ +8801677055600</a>
+            <a href="mailto:continentalflyway@gmail.com">
+                ✉ continentalflyway@gmail.com
             </a>
         </div>
+
     </div>
 </div>
 
-<!-- HEADER -->
-<header>
-    <div class="container navbar">
 
-        <a href="#home" class="logo">
-            <div class="logo-icon">🌍</div>
-            <div class="logo-text">
-                <h1>CONTINENTAL FLYWAY</h1>
-                <p>TRAVEL • CAREER • OPPORTUNITY</p>
-            </div>
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+<div class="container navbar">
+
+    <a href="#home" class="logo">
+
+        <div class="logo-icon">
+            ✈
+        </div>
+
+        <div class="logo-text">
+            <strong>CONTINENTAL FLYWAY</strong>
+            <span>TRAVEL • CAREER • OPPORTUNITY</span>
+        </div>
+
+    </a>
+
+
+    <button
+        class="menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Open Menu">
+        ☰
+    </button>
+
+
+    <nav class="nav-menu" id="navMenu">
+
+        <a href="#home">Home</a>
+
+        <a href="#jobs">Jobs Abroad</a>
+
+        <a href="#countries">Countries</a>
+
+        <a href="#services">Services</a>
+
+        <a href="#tours">Tours</a>
+
+        <a href="#about">About</a>
+
+        <a href="#leadership">Leadership</a>
+
+        <a href="#apply" class="apply-btn">
+            Apply Now
         </a>
 
-        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    </nav>
 
-        <ul class="nav-links" id="navLinks">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#jobs">Jobs Abroad</a></li>
-            <li><a href="#visa">Visa</a></li>
-            <li><a href="#tours">Tours</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+</div>
 
-    </div>
 </header>
 
-<!-- HERO -->
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero" id="home">
-    <div class="container">
-        <div class="hero-content">
 
-            <div class="hero-badge">
-                🌍 Travel • Career • Opportunity
-            </div>
+<div class="container hero-content">
 
-            <h2>
-                THE WHOLE WORLD<br>
-                IS YOUR <span>DESTINATION</span>
-            </h2>
+    <div>
 
-            <p>
-                Your gateway to international travel, overseas employment,
-                visa assistance, education, business and global opportunities.
-            </p>
+        <div class="hero-badge">
+            🌎 GLOBAL OPPORTUNITIES
+        </div>
 
-            <a href="#application" class="btn btn-primary">
+        <div class="hero-tagline">
+            TRAVEL • CAREER • OPPORTUNITY
+        </div>
+
+        <h1>
+            CONTINENTAL
+            <span>FLYWAY</span>
+        </h1>
+
+        <p>
+            Your gateway to overseas career opportunities,
+            manpower recruitment support, visa and documentation
+            guidance, and memorable tour packages.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#jobs" class="btn btn-orange">
+                Explore Jobs Abroad →
+            </a>
+
+            <a href="#apply" class="btn btn-white">
                 Apply Now
             </a>
 
-            <a href="https://wa.me/8801922422644"
-               target="_blank"
-               class="btn btn-whatsapp">
-                💬 WhatsApp Us
-            </a>
+        </div>
 
-            <a href="#services" class="btn btn-secondary">
-                Explore Services
-            </a>
+    </div>
+
+
+    <div class="hero-card">
+
+        <h3>
+            Build Your Future Beyond Borders
+        </h3>
+
+        <div class="hero-stats">
+
+            <div class="hero-stat">
+                <strong>🌍</strong>
+                <span>
+                    International Opportunities
+                </span>
+            </div>
+
+            <div class="hero-stat">
+                <strong>💼</strong>
+                <span>
+                    Employment Support
+                </span>
+            </div>
+
+            <div class="hero-stat">
+                <strong>📄</strong>
+                <span>
+                    Documentation Guidance
+                </span>
+            </div>
+
+            <div class="hero-stat">
+                <strong>🧳</strong>
+                <span>
+                    Tour Packages & Offers
+                </span>
+            </div>
 
         </div>
+
     </div>
-</section>
 
-<!-- STATS -->
-<div class="stats">
-    <div class="container">
-        <div class="stats-grid">
-
-            <div class="stat">
-                <h3>🌍</h3>
-                <p>Global Destinations</p>
-            </div>
-
-            <div class="stat">
-                <h3>💼</h3>
-                <p>Career Opportunities</p>
-            </div>
-
-            <div class="stat">
-                <h3>✈️</h3>
-                <p>Travel Services</p>
-            </div>
-
-            <div class="stat">
-                <h3>🤝</h3>
-                <p>Customer Support</p>
-            </div>
-
-        </div>
-    </div>
 </div>
 
-<!-- SERVICES -->
-<section id="services">
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Our Services</h2>
-            <p>
-                Professional travel, visa and global mobility services
-                from Bangladesh.
-            </p>
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-icon">🛂</div>
-                <h3>Visa Processing</h3>
-                <p>
-                    Assistance for tourist, business, work, student,
-                    medical and other visa applications.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">✈️</div>
-                <h3>Air Ticketing</h3>
-                <p>
-                    Air ticketing assistance for international and domestic
-                    travel. Booking is handled manually by our team.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🏨</div>
-                <h3>Hotel Booking</h3>
-                <p>
-                    Hotel reservation assistance for your travel requirements.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🧳</div>
-                <h3>Tour Packages</h3>
-                <p>
-                    Carefully planned tour packages for popular international
-                    destinations.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">💼</div>
-                <h3>Overseas Employment</h3>
-                <p>
-                    Assistance with international employment opportunities
-                    and recruitment-related services.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🤝</div>
-                <h3>B2B Facilities</h3>
-                <p>
-                    Business-to-business travel and recruitment support
-                    for partners and organizations.
-                </p>
-            </div>
-
-        </div>
-    </div>
 </section>
 
-<!-- JOBS -->
-<section id="jobs" style="background:#eef4fb;">
-    <div class="container">
 
-        <div class="section-title">
-            <h2>Overseas Employment</h2>
-            <p>
-                Explore employment opportunities across different sectors
-                and international destinations.
-            </p>
-        </div>
+<!-- =========================
+     SERVICES
+========================= -->
 
-        <div class="cards">
+<section class="section" id="services">
 
-            <div class="card job-card">
-                <div class="card-icon">🚗</div>
-                <h3>Driver</h3>
-                <p>Professional and commercial driving opportunities.</p>
-            </div>
+<div class="container">
 
-            <div class="card job-card">
-                <div class="card-icon">🏗️</div>
-                <h3>Construction Worker</h3>
-                <p>Construction and general labour opportunities.</p>
-            </div>
+<div class="section-title">
 
-            <div class="card job-card">
-                <div class="card-icon">🏭</div>
-                <h3>Factory Worker</h3>
-                <p>Production, manufacturing and factory positions.</p>
-            </div>
-
-            <div class="card job-card">
-                <div class="card-icon">🍽️</div>
-                <h3>Hotel & Restaurant Worker</h3>
-                <p>Hospitality and food service employment.</p>
-            </div>
-
-            <div class="card job-card">
-                <div class="card-icon">🌾</div>
-                <h3>Agriculture / Farm Worker</h3>
-                <p>Farm, greenhouse and agricultural opportunities.</p>
-            </div>
-
-            <div class="card job-card">
-                <div class="card-icon">📦</div>
-                <h3>Warehouse Worker</h3>
-                <p>Warehouse, logistics and order handling positions.</p>
-            </div>
-
-            <div class="card job-card">
-                <div class="card-icon">🧹</div>
-                <h3>Cleaner</h3>
-                <p>Cleaning and facility service opportunities.</p>
-            </div>
-
-            <div class="card job-card">
-                <div class="card-icon">❤️</div>
-                <h3>Caregiver</h3>
-                <p>Care and support related employment opportunities.</p>
-            </div>
-
-        </div>
+    <div class="eyebrow">
+        What We Do
     </div>
+
+    <h2>
+        Services Designed Around Your Journey
+    </h2>
+
+    <p>
+        Professional support for people exploring
+        international employment and travel opportunities.
+    </p>
+
+</div>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+    <div class="icon">💼</div>
+
+    <h3>
+        Overseas Employment
+    </h3>
+
+    <p>
+        Guidance for people exploring employment
+        opportunities in different countries and sectors.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="icon">👥</div>
+
+    <h3>
+        Manpower Recruitment
+    </h3>
+
+    <p>
+        Support for connecting suitable candidates
+        with international employment opportunities.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="icon">🌍</div>
+
+    <h3>
+        Jobs Abroad
+    </h3>
+
+    <p>
+        Country-focused information about available
+        job opportunities and application requirements.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="icon">📑</div>
+
+    <h3>
+        Visa & Documentation
+    </h3>
+
+    <p>
+        Guidance for preparing applications and
+        required documentation.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="icon">🧭</div>
+
+    <h3>
+        Career Guidance
+    </h3>
+
+    <p>
+        Practical direction on CVs, applications,
+        requirements and overseas career planning.
+    </p>
+
+</div>
+
+
+<div class="card">
+
+    <div class="icon">🧳</div>
+
+    <h3>
+        Tour Packages
+    </h3>
+
+    <p>
+        Planned travel experiences, destination
+        ideas and selected tour offers.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
 </section>
 
-<!-- COUNTRIES -->
-<section>
-    <div class="container">
 
-        <div class="section-title">
-            <h2>Countries & Destinations</h2>
-            <p>
-                Assistance for travel, visa and employment-related services
-                across multiple international destinations.
-            </p>
-        </div>
+<!-- =========================
+     JOBS
+========================= -->
 
-        <div class="country-grid">
+<section class="section section-light" id="jobs">
 
-            <div class="country">
-                🇪🇺
-                <strong>Europe</strong>
-                <span>Multiple Countries</span>
-            </div>
+<div class="container">
 
-            <div class="country">
-                🇸🇦
-                <strong>Saudi Arabia</strong>
-                <span>Employment & Travel</span>
-            </div>
+<div class="section-title">
 
-            <div class="country">
-                🇲🇾
-                <strong>Malaysia</strong>
-                <span>Travel & Employment</span>
-            </div>
-
-            <div class="country">
-                🌍
-                <strong>Worldwide</strong>
-                <span>Tourist & Business Visa</span>
-            </div>
-
-        </div>
+    <div class="eyebrow">
+        Career Opportunities
     </div>
-</section>
 
-<!-- VISA -->
-<section id="visa" style="background:#eef4fb;">
-    <div class="container">
-
-        <div class="section-title">
-            <h2>Visa Categories</h2>
-            <p>
-                Assistance with documentation and application preparation
-                for different visa categories.
-            </p>
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-icon">🏖️</div>
-                <h3>Tourist Visa</h3>
-                <p>Travel and holiday visa assistance.</p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">💼</div>
-                <h3>Business Visa</h3>
-                <p>Business travel and meeting-related visa assistance.</p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">👷</div>
-                <h3>Work Visa</h3>
-                <p>Employment visa processing and documentation assistance.</p>
-            </div>
-
-            <div class="card">
-     
+    <h2>
+   
