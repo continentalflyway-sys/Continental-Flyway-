@@ -1,22 +1,29 @@
-# Continental Flyway V3.1 Full-Stack
+# Continental Flyway Website V3.1
 
-## Files
-- `index.html` — public website
-- `admin.html` — admin dashboard
-- `app.js` — Supabase-powered public site
-- `admin.js` — admin operations
-- `config.js` — Supabase URL + publishable key
-- `style.css` — responsive design
-- `supabase_admin_policies.sql` — admin RLS policies
+Frontend-only website for Continental Flyway Tour & Travel, designed to connect to the existing Supabase backend/admin panel.
 
-## Deploy
-Upload all files to GitHub/hosting. Keep the filenames together in the same folder.
+## Included
+- Responsive home, services, destinations, jobs, leadership, about and contact sections
+- 7-continent interactive country explorer
+- Leadership photos supplied by the owner
+- Live job vacancy reading from Supabase `job_vacancies`
+- Ticket, hotel, visa, tour and Umrah request forms mapped to the existing Supabase tables
+- No ticket/hotel API; requests are manual and follow Request → Verify → Confirm
 
-## Supabase
-The site uses the Supabase project URL and publishable key in `config.js`. Never put a Supabase service-role key in frontend files.
+## Supabase setup
+Edit `js/config.js` and replace:
+`PASTE_YOUR_SUPABASE_PUBLISHABLE_KEY_HERE`
+with your Supabase publishable/anon key.
 
-## Admin
-Sign in with the admin account you created in Supabase Auth. The account must have `profiles.role = 'admin'`. Open `/admin.html` after login.
+Never put a service-role key in this frontend or in GitHub.
 
-## Important
-If admin policies were not already run, run `supabase_admin_policies.sql` in Supabase SQL Editor. If you already created policies with the same names, do not run the file unchanged; check existing policies first.
+Project URL is already set to:
+`https://thgahbuwnirlnlzcvdyx.supabase.co`
+
+## GitHub Pages
+1. Upload all files to your repository.
+2. Open Settings → Pages.
+3. Select the branch/folder containing `index.html`.
+4. Save and open the generated Pages URL.
+
+If your GitHub repository is already connected to another deployment, keep the same deployment method and replace the site files.
