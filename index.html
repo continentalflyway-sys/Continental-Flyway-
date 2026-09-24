@@ -3,37 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>CONTINENTAL FLYWAY | Travel • Career • Opportunity</title>
-
-<meta name="description"
-content="Continental Flyway — Travel, overseas career opportunities, visa and documentation guidance, recruitment assistance and tour packages.">
-
 <meta name="theme-color" content="#071a3d">
 
+<title>CONTINENTAL FLYWAY | The Whole World Is Your Office</title>
+
+<meta name="description" content="Continental Flyway - Overseas Employment, Visa Processing, Air Ticketing, Hotel Booking, Tour Packages and B2B Travel Facilities.">
+<meta property="og:title" content="CONTINENTAL FLYWAY">
+<meta property="og:description" content="THE WHOLE WORLD IS YOUR OFFICE">
+<meta property="og:type" content="website">
+
 <style>
+:root{
+  --navy:#071a3d;
+  --navy2:#0d2b5c;
+  --blue:#1167d8;
+  --gold:#f5b942;
+  --gold2:#ffd66b;
+  --white:#ffffff;
+  --light:#f5f8fc;
+  --text:#172033;
+  --muted:#657086;
+  --border:#e3e9f2;
+  --shadow:0 15px 45px rgba(7,26,61,.12);
+  --radius:22px;
+}
+
 *{
+  box-sizing:border-box;
   margin:0;
   padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
 }
 
 html{
   scroll-behavior:smooth;
-  scroll-padding-top:80px;
 }
 
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:#f7f9fc;
-  color:#10213d;
+  background:var(--light);
+  color:var(--text);
   line-height:1.6;
-}
-
-/* Prevent page from opening halfway down */
-body.preload{
-  overflow:hidden;
 }
 
 a{
@@ -41,1058 +50,1203 @@ a{
   color:inherit;
 }
 
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
 img{
   max-width:100%;
   display:block;
 }
 
-.container{
-  width:min(1150px,92%);
-  margin:auto;
+/* TOP BAR */
+.topbar{
+  background:#04132d;
+  color:#fff;
+  padding:9px 5%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px;
+  font-size:13px;
 }
 
-/* ================= HEADER ================= */
+.top-left,
+.top-right{
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex-wrap:wrap;
+}
 
+.topbar a:hover{
+  color:var(--gold2);
+}
+
+/* HEADER */
 header{
   position:sticky;
   top:0;
-  z-index:9999;
-  background:rgba(7,26,61,.96);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid rgba(255,255,255,.12);
+  z-index:1000;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 5px 25px rgba(0,0,0,.06);
 }
 
 .nav{
-  min-height:72px;
+  max-width:1400px;
+  margin:auto;
+  padding:12px 5%;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
+  gap:25px;
+}
+
+/* BRAND */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  min-width:max-content;
 }
 
 .logo{
-  color:#fff;
-  font-size:20px;
-  font-weight:900;
-  letter-spacing:.5px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  border:3px solid var(--gold);
+  display:grid;
+  place-items:center;
+  position:relative;
+  box-shadow:0 5px 20px rgba(17,103,216,.25);
+  overflow:hidden;
 }
 
-.logo span{
+.logo:before{
+  content:"🌍";
+  font-size:29px;
+}
+
+.logo:after{
+  content:"✈";
+  position:absolute;
+  right:5px;
+  top:4px;
+  font-size:17px;
+  color:var(--gold2);
+  transform:rotate(-18deg);
+}
+
+.brand-text strong{
   display:block;
-  color:#66d9ff;
+  font-size:22px;
+  letter-spacing:1px;
+  color:var(--navy);
+  font-weight:900;
+}
+
+.brand-text span{
+  display:block;
   font-size:10px;
   letter-spacing:2px;
-  margin-top:-2px;
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:24px;
-  color:#fff;
-  font-size:14px;
-  font-weight:700;
-}
-
-.nav-links a:hover{
-  color:#67d9ff;
-}
-
-.admin-btn{
-  padding:10px 16px;
-  border-radius:30px;
-  background:linear-gradient(135deg,#00b4db,#0083b0);
-  color:#fff!important;
+  color:#9a6900;
+  font-weight:800;
 }
 
 .menu{
-  display:none;
-  color:#fff;
-  font-size:28px;
+  display:flex;
+  align-items:center;
+  gap:5px;
+}
+
+.menu a{
+  padding:10px 11px;
+  font-size:14px;
+  font-weight:700;
+  color:#26344e;
+  border-radius:10px;
+}
+
+.menu a:hover{
+  background:#eef4ff;
+  color:var(--blue);
+}
+
+.menu .apply-nav{
+  background:var(--gold);
+  color:#172033;
+  padding:11px 17px;
+  margin-left:5px;
+}
+
+.menu .apply-nav:hover{
+  background:#ffca4e;
+  color:#111;
+}
+
+.lang-select{
+  border:1px solid var(--border);
+  background:#fff;
+  border-radius:10px;
+  padding:9px 8px;
+  font-weight:700;
+  color:var(--navy);
   cursor:pointer;
 }
 
-/* ================= HERO ================= */
+.menu-btn{
+  display:none;
+  border:0;
+  background:var(--navy);
+  color:#fff;
+  width:44px;
+  height:44px;
+  border-radius:12px;
+  font-size:22px;
+  cursor:pointer;
+}
 
+/* HERO */
 .hero{
-  min-height:calc(100vh - 72px);
+  min-height:650px;
   display:flex;
   align-items:center;
   position:relative;
   overflow:hidden;
   background:
-    radial-gradient(circle at 15% 20%,rgba(0,204,255,.28),transparent 30%),
-    radial-gradient(circle at 85% 70%,rgba(126,87,255,.25),transparent 32%),
-    linear-gradient(135deg,#061632,#0b2860 55%,#071a3d);
+    radial-gradient(circle at 85% 20%,rgba(245,185,66,.22),transparent 25%),
+    radial-gradient(circle at 10% 80%,rgba(17,103,216,.25),transparent 30%),
+    linear-gradient(135deg,#061737,#0c3470 60%,#08214b);
   color:#fff;
 }
 
 .hero:before{
   content:"";
   position:absolute;
-  width:420px;
-  height:420px;
-  border:1px solid rgba(255,255,255,.1);
+  width:650px;
+  height:650px;
+  border:1px solid rgba(255,255,255,.08);
   border-radius:50%;
-  right:-100px;
-  top:-100px;
+  right:-170px;
+  top:-80px;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  width:430px;
+  height:430px;
+  border:1px dashed rgba(245,185,66,.25);
+  border-radius:50%;
+  right:-20px;
+  top:30px;
 }
 
 .hero-content{
+  width:90%;
+  max-width:1400px;
+  margin:auto;
+  padding:80px 0;
   position:relative;
   z-index:2;
-  max-width:850px;
-  padding:90px 0;
 }
 
-.badge{
-  display:inline-block;
-  padding:8px 15px;
-  border:1px solid rgba(255,255,255,.2);
-  border-radius:30px;
-  background:rgba(255,255,255,.08);
-  color:#8ce8ff;
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:1.5px;
-  margin-bottom:20px;
+.hero-brand{
+  color:var(--gold2);
+  font-size:18px;
+  font-weight:900;
+  letter-spacing:4px;
+  margin-bottom:14px;
 }
 
 .hero h1{
-  font-size:clamp(42px,7vw,78px);
-  line-height:1.02;
-  margin-bottom:22px;
+  font-size:clamp(42px,7vw,82px);
+  line-height:1;
+  max-width:950px;
+  margin-bottom:20px;
   letter-spacing:-2px;
 }
 
 .hero h1 span{
-  color:#68ddff;
+  color:var(--gold2);
+}
+
+.hero-tag{
+  font-size:clamp(20px,3vw,30px);
+  font-weight:700;
+  max-width:800px;
+  margin-bottom:18px;
 }
 
 .hero p{
   max-width:720px;
-  color:rgba(255,255,255,.8);
-  font-size:18px;
-  margin-bottom:30px;
+  color:#dce8fb;
+  font-size:17px;
 }
 
 .hero-buttons{
   display:flex;
   flex-wrap:wrap;
-  gap:14px;
+  gap:13px;
+  margin-top:30px;
 }
 
 .btn{
+  border:0;
+  border-radius:13px;
+  padding:14px 22px;
+  cursor:pointer;
+  font-weight:800;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:14px 22px;
-  border-radius:12px;
-  font-weight:800;
+  gap:8px;
   transition:.25s;
 }
 
 .btn:hover{
-  transform:translateY(-3px);
+  transform:translateY(-2px);
 }
 
-.btn-primary{
+.btn-gold{
+  background:var(--gold);
+  color:#111b2d;
+}
+
+.btn-white{
   background:#fff;
-  color:#071a3d;
+  color:var(--navy);
 }
 
 .btn-outline{
-  border:1px solid rgba(255,255,255,.3);
+  border:1px solid rgba(255,255,255,.35);
   color:#fff;
-  background:rgba(255,255,255,.06);
+  background:rgba(255,255,255,.08);
 }
 
-/* ================= SECTIONS ================= */
-
+/* SECTIONS */
 section{
-  padding:90px 0;
+  padding:85px 5%;
 }
 
 .section-head{
+  max-width:780px;
+  margin:0 auto 45px;
   text-align:center;
-  max-width:760px;
-  margin:0 auto 48px;
 }
 
-.section-label{
-  color:#008db7;
-  font-size:12px;
-  font-weight:900;
+.section-head .eyebrow{
+  color:#b37b00;
+  text-transform:uppercase;
   letter-spacing:2px;
-  margin-bottom:10px;
+  font-weight:900;
+  font-size:13px;
 }
 
 .section-head h2{
-  font-size:clamp(30px,5vw,48px);
-  line-height:1.1;
-  margin-bottom:14px;
-  color:#071a3d;
+  font-size:clamp(30px,4vw,46px);
+  color:var(--navy);
+  margin:8px 0 12px;
 }
 
 .section-head p{
-  color:#64748b;
+  color:var(--muted);
 }
 
-/* ================= CARDS ================= */
+/* QUICK SERVICES */
+.quick{
+  background:#fff;
+  padding-top:30px;
+  padding-bottom:30px;
+}
+
+.quick-grid{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:15px;
+}
+
+.quick-card{
+  border:1px solid var(--border);
+  border-radius:18px;
+  padding:22px;
+  text-align:center;
+  font-weight:900;
+  background:#fff;
+  box-shadow:0 8px 25px rgba(7,26,61,.05);
+}
+
+.quick-card div{
+  font-size:30px;
+  margin-bottom:6px;
+}
+
+/* CARDS */
+.container{
+  max-width:1300px;
+  margin:auto;
+}
 
 .grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
   gap:22px;
+}
+
+.grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
+
+.grid-4{
+  grid-template-columns:repeat(4,1fr);
 }
 
 .card{
   background:#fff;
-  border-radius:22px;
-  padding:30px;
-  border:1px solid #e7edf5;
-  box-shadow:0 15px 45px rgba(7,26,61,.08);
-  transition:.3s;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:28px;
+  box-shadow:var(--shadow);
+  transition:.25s;
 }
 
 .card:hover{
-  transform:translateY(-7px);
-  box-shadow:0 22px 55px rgba(7,26,61,.13);
+  transform:translateY(-5px);
 }
 
 .icon{
-  width:58px;
-  height:58px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:16px;
-  background:#e7f8ff;
+  width:55px;
+  height:55px;
+  display:grid;
+  place-items:center;
+  border-radius:15px;
+  background:#eef5ff;
   font-size:27px;
-  margin-bottom:20px;
+  margin-bottom:17px;
 }
 
 .card h3{
+  color:var(--navy);
   margin-bottom:10px;
-  color:#071a3d;
+  font-size:21px;
 }
 
 .card p{
-  color:#64748b;
+  color:var(--muted);
+}
+
+.list{
+  list-style:none;
+  margin-top:15px;
+}
+
+.list li{
+  padding:5px 0;
+  color:#4f5b70;
   font-size:14px;
 }
 
-/* ================= JOBS ================= */
+.list li:before{
+  content:"✓";
+  color:#0d7c42;
+  font-weight:bold;
+  margin-right:8px;
+}
 
+/* JOBS */
 .jobs{
-  background:#eef7fb;
+  background:#f0f5fc;
 }
 
 .job-card{
-  background:#fff;
-  padding:26px;
-  border-radius:20px;
-  border:1px solid #dfeaf2;
+  position:relative;
+  overflow:hidden;
 }
 
-.job-country{
-  color:#008db7;
-  font-size:12px;
-  font-weight:900;
-  letter-spacing:1px;
-  text-transform:uppercase;
+.job-card:before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:4px;
+  background:linear-gradient(90deg,var(--blue),var(--gold));
 }
 
 .job-card h3{
-  margin:8px 0;
+  padding-top:5px;
 }
 
-.job-card p{
-  color:#64748b;
-  font-size:14px;
-  margin-bottom:15px;
-}
-
-.tag{
-  display:inline-block;
-  padding:6px 10px;
-  border-radius:20px;
-  background:#edf6ff;
-  color:#1769aa;
-  font-size:11px;
-  font-weight:800;
-}
-
-/* ================= COUNTRIES ================= */
-
+/* COUNTRY */
 .country{
   min-height:190px;
-  display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
   color:#fff;
-  overflow:hidden;
-  position:relative;
-  background:
-    linear-gradient(145deg,#071a3d,#087ea4);
-}
-
-.country:nth-child(2){
-  background:linear-gradient(145deg,#151b4d,#6545c8);
-}
-
-.country:nth-child(3){
-  background:linear-gradient(145deg,#063b35,#14916d);
-}
-
-.country:nth-child(4){
-  background:linear-gradient(145deg,#4a2608,#c56b17);
-}
-
-.country:nth-child(5){
-  background:linear-gradient(145deg,#172554,#2563eb);
-}
-
-.country:nth-child(6){
-  background:linear-gradient(145deg,#3f071d,#be185d);
+  border:0;
+  background:linear-gradient(145deg,#09224b,#0e55ad);
 }
 
 .country h3{
   color:#fff;
-  font-size:24px;
 }
 
 .country p{
-  color:rgba(255,255,255,.78);
+  color:#dce8fb;
 }
 
-/* ================= TOURS ================= */
+/* SERVICES */
+.service-card{
+  text-align:center;
+}
 
+.service-card .icon{
+  margin:0 auto 18px;
+}
+
+/* TOUR */
 .tour{
-  min-height:220px;
-  color:#fff;
+  padding:0;
+  min-height:280px;
+  overflow:hidden;
+  position:relative;
   display:flex;
-  flex-direction:column;
-  justify-content:flex-end;
-  background:linear-gradient(145deg,#006d77,#00a896);
+  align-items:flex-end;
+  background:linear-gradient(135deg,#09224b,#1167d8);
+  color:#fff;
 }
 
-.tour:nth-child(2){
-  background:linear-gradient(145deg,#075985,#0ea5e9);
-}
-
-.tour:nth-child(3){
-  background:linear-gradient(145deg,#312e81,#7c3aed);
-}
-
-.tour:nth-child(4){
-  background:linear-gradient(145deg,#065f46,#10b981);
+.tour .tour-content{
+  padding:28px;
+  position:relative;
+  z-index:2;
 }
 
 .tour h3{
   color:#fff;
-  font-size:25px;
+  font-size:28px;
 }
 
-/* ================= PROCESS ================= */
+.tour p{
+  color:#dbe8fb;
+}
 
-.process{
-  background:#071a3d;
+.tour .emoji{
+  position:absolute;
+  right:25px;
+  top:20px;
+  font-size:90px;
+  opacity:.2;
+}
+
+/* OFFER */
+.offer{
+  background:
+    radial-gradient(circle at 90% 20%,rgba(245,185,66,.25),transparent 25%),
+    linear-gradient(135deg,#071a3d,#0d3e85);
   color:#fff;
-}
-
-.process .section-head h2{
-  color:#fff;
-}
-
-.process .section-head p{
-  color:rgba(255,255,255,.7);
-}
-
-.step{
   text-align:center;
+}
+
+.offer h2{
   color:#fff;
+  font-size:clamp(30px,4vw,52px);
 }
 
-.step-number{
-  width:65px;
-  height:65px;
-  margin:0 auto 18px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#00b4db,#0083b0);
-  font-size:21px;
-  font-weight:900;
+/* ABOUT */
+.about{
+  background:#fff;
 }
-
-.step p{
-  color:rgba(255,255,255,.7);
-  font-size:14px;
-}
-
-/* ================= ABOUT ================= */
 
 .about-box{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:45px;
-  align-items:center;
+  max-width:1100px;
+  margin:auto;
+  background:#f7f9fd;
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:45px;
+  box-shadow:var(--shadow);
 }
 
-.about-text h2{
-  font-size:clamp(30px,5vw,48px);
-  line-height:1.1;
-  margin-bottom:20px;
-}
-
-.about-text p{
-  color:#64748b;
+.about-box p{
   margin-bottom:15px;
+  color:#4e5c73;
 }
 
-.about-panel{
-  padding:40px;
-  border-radius:30px;
-  background:
-    radial-gradient(circle at top right,rgba(0,204,255,.3),transparent 40%),
-    linear-gradient(145deg,#071a3d,#0c3b72);
-  color:#fff;
-  box-shadow:0 25px 60px rgba(7,26,61,.2);
-}
-
-.about-panel h3{
-  font-size:27px;
-  margin-bottom:12px;
-}
-
-.about-panel p{
-  color:rgba(255,255,255,.75);
-}
-
-/* ================= LEADERSHIP ================= */
-
-.leadership{
-  background:#f3f8fc;
-}
-
-.leadership-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
-
+/* LEADERSHIP */
 .leader{
   text-align:center;
-  background:#fff;
-  padding:35px 25px;
-  border-radius:24px;
-  border:1px solid #e5edf5;
-  box-shadow:0 15px 45px rgba(7,26,61,.08);
-  transition:.3s;
 }
 
-.leader:hover{
-  transform:translateY(-7px);
-}
-
-.leader-avatar{
-  width:82px;
-  height:82px;
-  margin:0 auto 20px;
+.avatar{
+  width:105px;
+  height:105px;
+  margin:0 auto 18px;
   border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(135deg,#071a3d,#08a7d1);
+  background:linear-gradient(135deg,var(--navy),var(--blue));
+  border:4px solid var(--gold);
+  display:grid;
+  place-items:center;
+  font-size:42px;
   color:#fff;
-  font-size:28px;
-  font-weight:900;
-}
-
-.leader-role{
-  color:#008db7;
-  font-size:14px;
-  font-weight:800;
-  margin-bottom:8px;
 }
 
 .leader h3{
-  font-size:21px;
-  color:#071a3d;
+  margin-bottom:3px;
 }
 
-/* ================= CONTACT ================= */
-
-.contact{
-  background:
-    radial-gradient(circle at 10% 20%,rgba(0,204,255,.18),transparent 30%),
-    linear-gradient(135deg,#071a3d,#0b2b63);
-  color:#fff;
+.role{
+  color:#b37b00;
+  font-weight:900;
 }
 
-.contact .section-head h2{
-  color:#fff;
+/* FAQ */
+.faq{
+  max-width:900px;
+  margin:auto;
 }
 
-.contact .section-head p{
-  color:rgba(255,255,255,.7);
+.faq-item{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:15px;
+  margin-bottom:12px;
+  overflow:hidden;
 }
 
-.contact-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-
-.contact-item{
-  padding:25px 18px;
-  border-radius:18px;
-  background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.12);
-  text-align:center;
-}
-
-.contact-item strong{
-  display:block;
-  margin-bottom:7px;
-}
-
-.contact-item span{
-  color:rgba(255,255,255,.72);
-  font-size:13px;
-  word-break:break-word;
-}
-
-/* ================= FOOTER ================= */
-
-footer{
-  background:#041126;
-  color:#fff;
-  padding:35px 0;
-}
-
-.footer{
+.faq-question{
+  width:100%;
+  background:#fff;
+  border:0;
+  padding:19px 20px;
   display:flex;
   justify-content:space-between;
-  gap:20px;
-  align-items:center;
+  text-align:left;
+  font-weight:800;
+  color:var(--navy);
+  cursor:pointer;
 }
 
-.footer p{
-  color:rgba(255,255,255,.6);
-  font-size:13px;
+.faq-answer{
+  display:none;
+  padding:0 20px 20px;
+  color:var(--muted);
 }
 
-.footer-links{
+.faq-item.active .faq-answer{
+  display:block;
+}
+
+/* FORMS */
+.form-section{
+  background:#eef4fc;
+}
+
+.form-box{
+  max-width:950px;
+  margin:auto;
+  background:#fff;
+  padding:35px;
+  border-radius:25px;
+  box-shadow:var(--shadow);
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.field{
   display:flex;
-  gap:18px;
-  font-size:13px;
-  color:#9edff0;
+  flex-direction:column;
+  gap:7px;
 }
 
-/* ================= MOBILE ================= */
+.field.full{
+  grid-column:1/-1;
+}
+
+.field label{
+  font-size:13px;
+  font-weight:800;
+  color:#33405a;
+}
+
+.field input,
+.field select,
+.field textarea{
+  border:1px solid #d7dfeb;
+  border-radius:11px;
+  padding:13px 14px;
+  outline:none;
+  background:#fff;
+}
+
+.field textarea{
+  min-height:130px;
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:var(--blue);
+  box-shadow:0 0 0 3px rgba(17,103,216,.08);
+}
+
+.form-note{
+  margin-top:12px;
+  color:#68758a;
+  font-size:12px;
+}
+
+/* CONTACT */
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.contact-card{
+  background:#fff;
+  border:1px solid var(--border);
+  padding:30px;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+}
+
+.contact-line{
+  display:flex;
+  gap:14px;
+  margin:17px 0;
+  align-items:flex-start;
+}
+
+.contact-line .ci{
+  width:43px;
+  height:43px;
+  flex:0 0 43px;
+  background:#eef5ff;
+  border-radius:12px;
+  display:grid;
+  place-items:center;
+}
+
+.contact-line strong{
+  display:block;
+  color:var(--navy);
+}
+
+.contact-line span{
+  color:var(--muted);
+}
+
+/* FOOTER */
+footer{
+  background:#04132d;
+  color:#c8d5ea;
+  padding:55px 5% 25px;
+}
+
+.footer-grid{
+  max-width:1300px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr 1.4fr;
+  gap:40px;
+}
+
+.footer-brand strong{
+  color:#fff;
+  font-size:25px;
+}
+
+.footer-brand p{
+  margin-top:12px;
+  max-width:450px;
+}
+
+footer h4{
+  color:#fff;
+  margin-bottom:15px;
+}
+
+footer a{
+  display:block;
+  margin:7px 0;
+}
+
+footer a:hover{
+  color:var(--gold2);
+}
+
+.copyright{
+  max-width:1300px;
+  margin:40px auto 0;
+  padding-top:20px;
+  border-top:1px solid rgba(255,255,255,.1);
+  font-size:13px;
+}
+
+/* FLOATING BUTTONS */
+.floating{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:1200;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+}
+
+.float-btn{
+  width:54px;
+  height:54px;
+  border-radius:50%;
+  border:0;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  font-size:23px;
+  box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+.whatsapp{
+  background:#20c463;
+  color:#fff;
+}
+
+.share{
+  background:var(--gold);
+  color:#111;
+}
+
+/* SHARE MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:2000;
+  background:rgba(0,0,0,.65);
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+.modal.show{
+  display:flex;
+}
+
+.modal-box{
+  width:min(500px,100%);
+  background:#fff;
+  border-radius:24px;
+  padding:30px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  right:18px;
+  top:15px;
+  border:0;
+  background:#f0f2f5;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.share-link{
+  background:#f5f7fa;
+  border:1px solid var(--border);
+  padding:13px;
+  border-radius:10px;
+  margin:20px 0;
+  word-break:break-all;
+  font-size:13px;
+}
+
+.share-actions{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+/* TOAST */
+.toast{
+  position:fixed;
+  left:50%;
+  bottom:25px;
+  transform:translate(-50%,120px);
+  background:#111d35;
+  color:#fff;
+  padding:13px 20px;
+  border-radius:12px;
+  z-index:3000;
+  transition:.3s;
+  opacity:0;
+}
+
+.toast.show{
+  transform:translate(-50%,0);
+  opacity:1;
+}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .menu a{
+    padding:9px 7px;
+    font-size:13px;
+  }
+
+  .brand-text strong{
+    font-size:18px;
+  }
+
+  .grid-4{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .quick-grid{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
 
 @media(max-width:850px){
+  .topbar{
+    justify-content:center;
+    font-size:12px;
+  }
 
-  .nav-links{
+  .top-left,
+  .top-right{
+    justify-content:center;
+  }
+
+  .menu-btn{
+    display:block;
+  }
+
+  .menu{
     display:none;
     position:absolute;
-    top:72px;
+    top:100%;
     left:0;
     right:0;
-    padding:20px;
-    background:#071a3d;
+    background:#fff;
+    padding:15px 5%;
+    border-bottom:1px solid var(--border);
+    box-shadow:0 15px 30px rgba(0,0,0,.08);
     flex-direction:column;
     align-items:stretch;
   }
 
-  .nav-links.show{
+  .menu.open{
     display:flex;
   }
 
-  .menu{
-    display:block;
+  .menu a{
+    width:100%;
+    padding:13px;
   }
 
-  .grid,
-  .leadership-grid{
-    grid-template-columns:1fr;
-  }
-
-  .about-box{
-    grid-template-columns:1fr;
-  }
-
-  .contact-grid{
-    grid-template-columns:1fr 1fr;
-  }
-
-  .hero{
-    min-height:auto;
-  }
-
-  .hero-content{
-    padding:80px 0;
-  }
-}
-
-@media(max-width:520px){
-
-  section{
-    padding:70px 0;
-  }
-
-  .hero h1{
-    letter-spacing:-1px;
-  }
-
-  .hero p{
-    font-size:16px;
-  }
-
-  .hero-buttons{
-    flex-direction:column;
-  }
-
-  .btn{
+  .lang-select{
     width:100%;
   }
 
+  .grid-3{
+    grid-template-columns:1fr 1fr;
+  }
+
   .contact-grid{
     grid-template-columns:1fr;
   }
+}
 
-  .footer{
-    flex-direction:column;
-    text-align:center;
+@media(max-width:600px){
+  .topbar{
+    display:none;
+  }
+
+  .nav{
+    padding:10px 4%;
+  }
+
+  .logo{
+    width:49px;
+    height:49px;
+  }
+
+  .logo:before{
+    font-size:24px;
+  }
+
+  .brand-text strong{
+    font-size:15px;
+    letter-spacing:.5px;
+  }
+
+  .brand-text span{
+    font-size:8px;
+    letter-spacing:1px;
+  }
+
+  section{
+    padding:65px 4%;
+  }
+
+  .hero{
+    min-height:600px;
+  }
+
+  .hero-content{
+    width:92%;
+    padding:60px 0;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .hero-tag{
+    font-size:20px;
+  }
+
+  .hero-buttons .btn{
+    width:100%;
+  }
+
+  .quick-grid,
+  .grid-3,
+  .grid-4{
+    grid-template-columns:1fr;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .form-box,
+  .about-box{
+    padding:24px;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
   }
 }
 </style>
 </head>
 
-<body class="preload">
+<body>
 
-<!-- ================= HEADER ================= -->
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="top-left">
+    <a href="tel:+8801998888321">☎ +8801998888321</a>
+    <a href="tel:+8801677055600">☎ +8801677055600</a>
+  </div>
 
+  <div class="top-right">
+    <a href="mailto:continentalflyway@gmail.com">✉ continentalflyway@gmail.com</a>
+    <span>🕙 10 AM – 6 PM</span>
+  </div>
+</div>
+
+<!-- HEADER -->
 <header>
-  <div class="container nav">
+  <nav class="nav">
 
-    <a href="#home" class="logo">
-      CONTINENTAL FLYWAY
-      <span>TRAVEL • CAREER • OPPORTUNITY</span>
+    <a href="#home" class="brand">
+      <div class="logo"></div>
+      <div class="brand-text">
+        <strong>CONTINENTAL FLYWAY</strong>
+        <span>THE WHOLE WORLD IS YOUR OFFICE</span>
+      </div>
     </a>
 
-    <nav class="nav-links" id="navLinks">
-      <a href="#home">Home</a>
-      <a href="#services">Services</a>
-      <a href="#jobs">Jobs Abroad</a>
-      <a href="#countries">Countries</a>
-      <a href="#tours">Tours</a>
-      <a href="#about">About</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#contact">Contact</a>
-      <a class="admin-btn"
-         href="admin.html">
-         Admin Login
-      </a>
-    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
 
-    <div class="menu" id="menuBtn">☰</div>
+    <div class="menu" id="mainMenu">
+      <a href="#home" data-i18n="home">Home</a>
+      <a href="#jobs" data-i18n="jobs">Jobs</a>
+      <a href="#countries" data-i18n="countries">Countries</a>
+      <a href="#services" data-i18n="services">Services</a>
+      <a href="#tours" data-i18n="tours">Tours</a>
+      <a href="#about" data-i18n="about">About</a>
+      <a href="#contact" data-i18n="contact">Contact</a>
 
-  </div>
+      <select class="lang-select" id="languageSelect" aria-label="Language">
+        <option value="en">🇬🇧 English</option>
+        <option value="bn">🇧🇩 বাংলা</option>
+        <option value="ar">🇸🇦 العربية</option>
+        <option value="it">🇮🇹 Italiano</option>
+        <option value="de">🇩🇪 Deutsch</option>
+        <option value="fr">🇫🇷 Français</option>
+        <option value="es">🇪🇸 Español</option>
+      </select>
+
+      <a href="#apply" class="apply-nav" data-i18n="apply">Apply Now</a>
+    </div>
+
+  </nav>
 </header>
 
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-content">
 
-<!-- ================= HERO ================= -->
+    <div class="hero-brand">🌍 ✈ CONTINENTAL FLYWAY</div>
 
-<main id="home">
+    <h1>
+      <span>THE WHOLE WORLD</span><br>
+      IS YOUR OFFICE
+    </h1>
 
-<section class="hero">
-  <div class="container">
+    <div class="hero-tag">
+      Travel • Career • Opportunity
+    </div>
 
-    <div class="hero-content">
+    <p>
+      Overseas employment assistance, visa processing, travel services,
+      tour packages and international opportunities — with professional
+      communication and practical support.
+    </p>
 
-      <div class="badge">
-        🌍 TRAVEL • CAREER • OPPORTUNITY
-      </div>
-
-      <h1>
-        Your Journey.<br>
-        <span>Your Opportunity.</span>
-      </h1>
-
-      <p>
-        Explore the world, discover international career opportunities,
-        and move toward your future with Continental Flyway.
-      </p>
-
-      <div class="hero-buttons">
-
-        <a href="#jobs" class="btn btn-primary">
-          Explore Jobs Abroad
-        </a>
-
-        <a href="#tours" class="btn btn-outline">
-          Explore Tour Packages
-        </a>
-
-        <a href="#contact" class="btn btn-outline">
-          Contact Us
-        </a>
-
-      </div>
-
+    <div class="hero-buttons">
+      <a class="btn btn-gold" href="#jobs">🔎 Find a Job</a>
+      <a class="btn btn-white" href="#tours">🧳 Explore Tours</a>
+      <a class="btn btn-outline" href="#inquiry">💬 Make an Inquiry</a>
     </div>
 
   </div>
 </section>
 
+<!-- QUICK SERVICES -->
+<section class="quick">
+  <div class="quick-grid">
 
-<!-- ================= SERVICES ================= -->
+    <a class="quick-card" href="#services">
+      <div>🛂</div>
+      Visa Processing
+    </a>
 
-<section id="services">
+    <a class="quick-card" href="#services">
+      <div>✈️</div>
+      Air Ticketing
+    </a>
 
-  <div class="container">
+    <a class="quick-card" href="#services">
+      <div>🏨</div>
+      Hotel Booking
+    </a>
 
-    <div class="section-head">
-      <div class="section-label">OUR SERVICES</div>
-      <h2>Everything You Need for Your Next Journey</h2>
-      <p>
-        Practical travel, career and overseas opportunity support
-        from one place.
-      </p>
-    </div>
+    <a class="quick-card" href="#tours">
+      <div>🧳</div>
+      Tour Packages
+    </a>
 
-    <div class="grid">
-
-      <article class="card">
-        <div class="icon">💼</div>
-        <h3>Overseas Employment</h3>
-        <p>
-          Guidance and assistance for international employment
-          opportunities and recruitment processes.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="icon">🌍</div>
-        <h3>Jobs Abroad</h3>
-        <p>
-          Discover selected overseas job opportunities across
-          different countries and sectors.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="icon">📄</div>
-        <h3>Visa & Documentation</h3>
-        <p>
-          Visa and documentation guidance to help you understand
-          the required application process.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="icon">✈️</div>
-        <h3>Travel Assistance</h3>
-        <p>
-          Support for travel planning, destination information
-          and related travel arrangements.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="icon">🏝️</div>
-        <h3>Tour Packages</h3>
-        <p>
-          Explore carefully planned holiday packages and
-          destination experiences.
-        </p>
-      </article>
-
-      <article class="card">
-        <div class="icon">🎯</div>
-        <h3>Career Guidance</h3>
-        <p>
-          General career guidance for people planning their
-          next international opportunity.
-        </p>
-      </article>
-
-    </div>
+    <a class="quick-card" href="#services">
+      <div>🤝</div>
+      B2B Facilities
+    </a>
 
   </div>
-
 </section>
 
+<!-- JOBS -->
+<section class="jobs" id="jobs">
 
-<!-- ================= JOBS ================= -->
-
-<section id="jobs" class="jobs">
-
-  <div class="container">
-
-    <div class="section-head">
-      <div class="section-label">CAREER OPPORTUNITIES</div>
-      <h2>Jobs Abroad</h2>
-      <p>
-        Explore international career opportunities and submit
-        an inquiry for suitable positions.
-      </p>
-    </div>
-
-    <div class="grid">
-
-      <article class="job-card">
-        <div class="job-country">Italy</div>
-        <h3>Driver & Logistics Jobs</h3>
-        <p>
-          Opportunities may include professional driving,
-          delivery and logistics roles.
-        </p>
-        <span class="tag">Explore Opportunity</span>
-      </article>
-
-      <article class="job-card">
-        <div class="job-country">Germany</div>
-        <h3>Logistics & Skilled Jobs</h3>
-        <p>
-          Explore selected employment opportunities and
-          application requirements.
-        </p>
-        <span class="tag">Explore Opportunity</span>
-      </article>
-
-      <article class="job-card">
-        <div class="job-country">Netherlands</div>
-        <h3>Delivery & Warehouse</h3>
-        <p>
-          International delivery, warehouse and logistics
-          opportunities.
-        </p>
-        <span class="tag">Explore Opportunity</span>
-      </article>
-
-      <article class="job-card">
-        <div class="job-country">Finland</div>
-        <h3>Driver & Service Roles</h3>
-        <p>
-          Explore employment opportunities and eligibility
-          requirements.
-        </p>
-        <span class="tag">Explore Opportunity</span>
-      </article>
-
-      <article class="job-card">
-        <div class="job-country">Sweden</div>
-        <h3>Transport & Service</h3>
-        <p>
-          Discover selected international opportunities.
-        </p>
-        <span class="tag">Explore Opportunity</span>
-      </article>
-
-      <article class="job-card">
-        <div class="job-country">UAE</div>
-        <h3>Driver & Hospitality</h3>
-        <p>
-          Explore driver, service and hospitality opportunities.
-        </p>
-        <span class="tag">Explore Opportunity</span>
-      </article>
-
-    </div>
-
+  <div class="section-head">
+    <div class="eyebrow">Overseas Employment</div>
+    <h2>Explore Job Opportunities</h2>
+    <p>
+      Explore selected overseas employment opportunities according to
+      employer vacancies, candidate qualifications and applicable regulations.
+    </p>
   </div>
 
-</section>
+  <div class="container grid grid-4">
 
-
-<!-- ================= COUNTRIES ================= -->
-
-<section id="countries">
-
-  <div class="container">
-
-    <div class="section-head">
-      <div class="section-label">DESTINATIONS</div>
-      <h2>Explore Countries</h2>
-      <p>
-        Discover destinations for travel and international
-        career opportunities.
-      </p>
+    <div class="card job-card">
+      <div class="icon">🚗</div>
+      <h3>Driver & Delivery Jobs</h3>
+      <ul class="list">
+        <li>Light Vehicle Driver</li>
+        <li>Heavy Vehicle Driver</li>
+        <li>Delivery Driver</li>
+        <li>Taxi / Private Driver</li>
+      </ul>
     </div>
 
-    <div class="grid">
-
-      <article class="card country">
-        <h3>🇮🇹 Italy</h3>
-        <p>Europe • Career & Travel</p>
-      </article>
-
-      <article class="card country">
-        <h3>🇩🇪 Germany</h3>
-        <p>Europe • Career & Travel</p>
-      </article>
-
-      <article class="card country">
-        <h3>🇳🇱 Netherlands</h3>
-        <p>Europe • Career & Travel</p>
-      </article>
-
-      <article class="card country">
-        <h3>🇫🇮 Finland</h3>
-        <p>Europe • Career & Travel</p>
-      </article>
-
-      <article class="card country">
-        <h3>🇸🇪 Sweden</h3>
-        <p>Europe • Career & Travel</p>
-      </article>
-
-      <article class="card country">
-        <h3>🇦🇪 UAE</h3>
-        <p>Middle East • Career & Travel</p>
-      </article>
-
+    <div class="card job-card">
+      <div class="icon">🏗️</div>
+      <h3>Construction Jobs</h3>
+      <ul class="list">
+        <li>Construction Worker</li>
+        <li>Mason</li>
+        <li>Carpenter</li>
+        <li>Electrician</li>
+        <li>Plumber</li>
+        <li>Welder</li>
+      </ul>
     </div>
 
-  </div>
-
-</section>
-
-
-<!-- ================= TOURS ================= -->
-
-<section id="tours" class="jobs">
-
-  <div class="container">
-
-    <div class="section-head">
-      <div class="section-label">TRAVEL EXPERIENCES</div>
-      <h2>Tour Packages</h2>
-      <p>
-        Discover beautiful destinations and plan your next
-        memorable journey.
-      </p>
+    <div class="card job-card">
+      <div class="icon">🏭</div>
+      <h3>Factory & Manufacturing</h3>
+      <ul class="list">
+        <li>Production Worker</li>
+        <li>Machine Operator</li>
+        <li>Assembly Worker</li>
+        <li>Packaging Worker</li>
+        <li>Quality Control Assistant</li>
+      </ul>
     </div>
 
-    <div class="grid">
-
-      <article class="card tour">
-        <h3>🇲🇻 Maldives</h3>
-        <p>Island escapes & tropical experiences.</p>
-      </article>
-
-      <article class="card tour">
-        <h3>🇹🇭 Thailand</h3>
-        <p>Culture, beaches and unforgettable adventures.</p>
-      </article>
-
-      <article class="card tour">
-        <h3>🇸🇬 Singapore</h3>
-        <p>Modern city experiences and attractions.</p>
-      </article>
-
-      <article class="card tour">
-        <h3>🇲🇾 Malaysia</h3>
-        <p>Nature, culture and city experiences.</p>
-      </article>
-
+    <div class="card job-card">
+      <div class="icon">📦</div>
+      <h3>Warehouse & Logistics</h3>
+      <ul class="list">
+        <li>Warehouse Worker</li>
+        <li>Picker & Packer</li>
+        <li>Loading / Unloading Worker</li>
+        <li>Logistics Assistant</li>
+        <li>Forklift Operator</li>
+      </ul>
     </div>
 
-  </div>
-
-</section>
-
-
-<!-- ================= PROCESS ================= -->
-
-<section class="process">
-
-  <div class="container">
-
-    <div class="section-head">
-      <div class="section-label">HOW IT WORKS</div>
-      <h2>Start Your Journey</h2>
-      <p>
-        A simple process to begin exploring your next
-        travel or career opportunity.
-      </p>
+    <div class="card job-card">
+      <div class="icon">🌾</div>
+      <h3>Agriculture & Farming</h3>
+      <ul class="list">
+        <li>Farm Worker</li>
+        <li>Fruit & Vegetable Picker</li>
+        <li>Greenhouse Worker</li>
+        <li>Livestock Worker</li>
+        <li>General Agricultural Worker</li>
+      </ul>
     </div>
 
-    <div class="grid">
-
-      <div class="step">
-        <div class="step-number">01</div>
-        <h3>Explore</h3>
-        <p>
-          Browse jobs, countries and tour opportunities.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">02</div>
-        <h3>Inquire</h3>
-        <p>
-          Contact our team with your requirements.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">03</div>
-        <h3>Prepare</h3>
-        <p>
-          Review eligibility and required documentation.
-        </p>
-      </div>
-
-      <div class="step">
-        <div class="step-number">04</div>
-        <h3>Move Forward</h3>
-        <p>
-          Continue with the appropriate application process.
-        </p>
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ================= ABOUT ================= -->
-
-<section id="about">
-
-  <div class="container about-box">
-
-    <div class="about-text">
-
-      <div class="section-label">ABOUT CONTINENTAL FLYWAY</div>
-
-      <h2>
-        Your Journey.<br>
-        Our Responsibility.
-      </h2>
-
-      <p>
-        Continental Flyway is focused on connecting people with
-        travel experiences and international career opportunities.
-      </p>
-
-      <p>
-        We aim to provide clear information, practical guidance
-        and responsive support throughout the journey.
-      </p>
-
-      <p>
-        Our focus is simple: <strong>Travel • Career • Opportunity.</strong>
-      </p>
-
-    </div>
-
-    <div c
+    <div class="card job-card">
+      <div class="icon">🏨</div>
+      <h3>Hospitality & Restaurant</h3>
+      <ul class="list">
+        <li>Hotel Staff</li>
+        <li>Housekeeping</li>
+        <li>Kitchen Helper</li>
